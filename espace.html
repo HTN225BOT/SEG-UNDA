@@ -1,1 +1,715 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
 
+<meta
+name=“viewport”
+content=“width=device-width, initial-scale=1.0”
+
+  <title>Mon espace | SEG UNDA</title>
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+  <style>
+    .student-page {
+      min-height: 78vh;
+      padding: 70px 7%;
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(0, 217, 255, 0.10),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 70%,
+          rgba(124, 92, 255, 0.15),
+          transparent 35%
+        );
+    }
+    .student-hero {
+      max-width: 850px;
+      margin: 0 auto 50px;
+      text-align: center;
+    }
+    .student-label {
+      margin-bottom: 12px;
+      color: #00d9ff;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+    .student-hero h1 {
+      margin-bottom: 15px;
+      font-size: 3rem;
+      line-height: 1.15;
+    }
+    .student-hero p {
+      color: #aeb6d0;
+      font-size: 1.05rem;
+    }
+    .student-name {
+      color: #00d9ff;
+    }
+    .student-cards {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .student-card {
+      display: block;
+      padding: 35px 25px;
+      text-align: center;
+      text-decoration: none;
+      color: #ffffff;
+      border-radius: 22px;
+      background: rgba(20, 24, 48, 0.78);
+      border: 1px solid rgba(124, 92, 255, 0.28);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.20);
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+    .student-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 217, 255, 0.55);
+      box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.25),
+        0 0 25px rgba(0, 217, 255, 0.08);
+    }
+    .student-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      background: rgba(0, 217, 255, 0.08);
+      border: 1px solid rgba(0, 217, 255, 0.22);
+      font-size: 2rem;
+    }
+    .student-card h2 {
+      margin-bottom: 12px;
+      font-size: 1.35rem;
+    }
+    .student-card p {
+      color: #aeb6d0;
+      font-size: 0.95rem;
+    }
+    .student-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: #00d9ff;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    .profile-panel {
+      display: none;
+      max-width: 700px;
+      margin: 40px auto 0;
+      padding: 35px;
+      text-align: center;
+      border-radius: 22px;
+      background: rgba(20, 24, 48, 0.85);
+      border: 1px solid rgba(0, 217, 255, 0.25);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.20);
+    }
+    .profile-panel.visible {
+      display: block;
+    }
+    .profile-photo {
+      width: 95px;
+      height: 95px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(0, 217, 255, 0.55);
+      background: #141830;
+    }
+    .profile-panel h2 {
+      margin-bottom: 20px;
+      color: #00d9ff;
+    }
+    .profile-info {
+      margin-bottom: 25px;
+    }
+    .profile-info p {
+      margin: 8px 0;
+      color: #aeb6d0;
+    }
+    .profile-info strong {
+      color: #ffffff;
+    }
+    .name-editor {
+      margin-top: 25px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(124, 92, 255, 0.20);
+    }
+    .name-editor h3 {
+      margin-bottom: 15px;
+    }
+    .name-editor input {
+      width: 100%;
+      padding: 13px 16px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(124, 92, 255, 0.35);
+      border-radius: 12px;
+      background: rgba(8, 11, 24, 0.75);
+      color: #ffffff;
+      outline: none;
+      font-size: 1rem;
+    }
+    .name-editor input:focus {
+      border-color: #00d9ff;
+    }
+    .profile-btn {
+      display: inline-block;
+      padding: 11px 20px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #7c5cff, #00d9ff);
+      color: #ffffff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .profile-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(0, 217, 255, 0.20);
+    }
+    .close-profile {
+      margin-top: 20px;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.20);
+    }
+    .name-message {
+      margin-top: 12px;
+      color: #00d9ff;
+      font-size: 0.9rem;
+    }
+    .logout-area {
+      margin: 45px auto 0;
+      text-align: center;
+    }
+    .logout-btn {
+      padding: 12px 25px;
+      border: 1px solid rgba(255, 100, 100, 0.35);
+      border-radius: 30px;
+      background: rgba(255, 80, 80, 0.08);
+      color: #ffffff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .logout-btn:hover {
+      background: rgba(255, 80, 80, 0.18);
+      transform: translateY(-2px);
+    }
+    .loading {
+      text-align: center;
+      color: #aeb6d0;
+      padding: 50px 20px;
+    }
+    @media (max-width: 768px) {
+      .student-page {
+        padding: 55px 7%;
+      }
+      .student-hero h1 {
+        font-size: 2.3rem;
+      }
+      .student-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .profile-panel {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+<div class="logo">
+  <img
+    src="seg-unda-logo.png"
+    alt="Logo SEG UNDA"
+  >
+</div>
+<nav>
+  <a href="index.html">
+    Accueil
+  </a>
+  <a href="licence.html">
+    Formations
+  </a>
+  <a href="apropos.html">
+    À propos
+  </a>
+</nav>
+<a
+  href="espace.html"
+  class="header-btn"
+>
+  Mon espace
+</a>
+  </header>
+  <main class="student-page">
+<section class="student-hero">
+  <p class="student-label">
+    SEG UNDA
+  </p>
+  <h1>
+    Bienvenue
+    <span
+      class="student-name"
+      id="studentName"
+    >
+      Étudiant
+    </span>
+  </h1>
+  <p id="studentEmail">
+    Chargement de ton espace...
+  </p>
+</section>
+<section
+  class="student-cards"
+  id="studentCards"
+>
+  <a
+    href="licence.html"
+    id="formationCard"
+    class="student-card"
+  >
+    <div class="student-icon">
+      🎓
+    </div>
+    <h2>
+      Mes formations
+    </h2>
+    <p id="formationDescription">
+      Choisis ton niveau de Licence.
+    </p>
+    <span class="student-link">
+      Accéder →
+    </span>
+  </a>
+  <a
+    href="cours/index.html"
+    id="coursesCard"
+    class="student-card"
+  >
+    <div class="student-icon">
+      📖
+    </div>
+    <h2>
+      Mes cours
+    </h2>
+    <p id="coursesDescription">
+      Accède aux cours et matières.
+    </p>
+    <span class="student-link">
+      Voir les cours →
+    </span>
+  </a>
+  <div
+    id="profileCard"
+    class="student-card"
+  >
+    <div class="student-icon">
+      👤
+    </div>
+    <h2>
+      Mon profil
+    </h2>
+    <p>
+      Consulte et personnalise
+      tes informations.
+    </p>
+    <span class="student-link">
+      Voir mon profil →
+    </span>
+  </div>
+</section>
+<section
+  class="profile-panel"
+  id="profilePanel"
+>
+  <img
+    id="profilePhoto"
+    class="profile-photo"
+    src=""
+    alt="Photo de profil"
+  >
+  <h2>
+    Mon profil
+  </h2>
+  <div class="profile-info">
+    <p>
+      <strong>Nom :</strong>
+      <span id="profileName">
+        Étudiant
+      </span>
+    </p>
+    <p>
+      <strong>Email :</strong>
+      <span id="profileEmail">
+        -
+      </span>
+    </p>
+    <p>
+      <strong>Niveau :</strong>
+      <span id="profileLevel">
+        Aucun niveau sélectionné
+      </span>
+    </p>
+  </div>
+  <div class="name-editor">
+    <h3>
+      Modifier mon nom d'affichage
+    </h3>
+    <input
+      type="text"
+      id="newName"
+      placeholder="Entre ton nom"
+      maxlength="50"
+    >
+    <button
+      class="profile-btn"
+      id="saveNameBtn"
+    >
+      Enregistrer
+    </button>
+    <p
+      class="name-message"
+      id="nameMessage"
+    ></p>
+  </div>
+  <button
+    class="profile-btn close-profile"
+    id="closeProfileBtn"
+  >
+    Fermer le profil
+  </button>
+</section>
+<div class="logout-area">
+  <button
+    class="logout-btn"
+    id="logoutBtn"
+  >
+    🚪 Se déconnecter
+  </button>
+</div>
+  </main>
+  <footer>
+<p>
+  SEG UNDA — Sciences Économiques et de Gestion
+</p>
+<div class="signature">
+  <span class="michael">
+    MICHAEL
+  </span>
+  <small>
+    Étudiant
+  </small>
+</div>
+  </footer>
+  <script type="module">
+    import {
+      initializeApp
+    }
+    from
+      "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+    import {
+      getAuth,
+      onAuthStateChanged,
+      signOut
+    }
+    from
+      "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+    import {
+      getFirestore,
+      doc,
+      getDoc,
+      setDoc
+    }
+    from
+      "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+    const firebaseConfig = {
+      apiKey:
+        "AIzaSyC4ejbTOO1G3XbwDJ5KYH6-CiYcdQqr68k",
+      authDomain:
+        "seg-unda.firebaseapp.com",
+      projectId:
+        "seg-unda",
+      storageBucket:
+        "seg-unda.firebasestorage.app",
+      messagingSenderId:
+        "1076997262231",
+      appId:
+        "1:1076997262231:web:31b640fa8fd5991e8612d2"
+    };
+    const app =
+      initializeApp(firebaseConfig);
+    const auth =
+      getAuth(app);
+    const db =
+      getFirestore(app);
+    const studentName =
+      document.getElementById("studentName");
+    const studentEmail =
+      document.getElementById("studentEmail");
+    const profileName =
+      document.getElementById("profileName");
+    const profileEmail =
+      document.getElementById("profileEmail");
+    const profileLevel =
+      document.getElementById("profileLevel");
+    const profilePhoto =
+      document.getElementById("profilePhoto");
+    const formationCard =
+      document.getElementById("formationCard");
+    const formationDescription =
+      document.getElementById("formationDescription");
+    const coursesCard =
+      document.getElementById("coursesCard");
+    const coursesDescription =
+      document.getElementById("coursesDescription");
+    const profileCard =
+      document.getElementById("profileCard");
+    const profilePanel =
+      document.getElementById("profilePanel");
+    const closeProfileBtn =
+      document.getElementById("closeProfileBtn");
+    const saveNameBtn =
+      document.getElementById("saveNameBtn");
+    const newName =
+      document.getElementById("newName");
+    const nameMessage =
+      document.getElementById("nameMessage");
+    const logoutBtn =
+      document.getElementById("logoutBtn");
+    let currentUser = null;
+    function getLevelPage(level) {
+      if (level === "L1") {
+        return "l1.html";
+      }
+      if (level === "L2") {
+        return "l2.html";
+      }
+      if (level === "L3") {
+        return "l3.html";
+      }
+      return "licence.html";
+    }
+    async function loadStudentData(user) {
+      currentUser = user;
+      let displayName =
+        user.displayName || "Étudiant";
+      let selectedLevel =
+        localStorage.getItem("segUndaLevel");
+      try {
+        const userRef =
+          doc(
+            db,
+            "users",
+            user.uid
+          );
+        const userSnap =
+          await getDoc(userRef);
+        if (userSnap.exists()) {
+          const data =
+            userSnap.data();
+          if (data.displayName) {
+            displayName =
+              data.displayName;
+          }
+          if (data.level) {
+            selectedLevel =
+              data.level;
+            localStorage.setItem(
+              "segUndaLevel",
+              data.level
+            );
+          }
+        }
+      }
+      catch (error) {
+        console.error(
+          "Erreur Firestore :",
+          error
+        );
+      }
+      studentName.textContent =
+        displayName;
+      studentEmail.textContent =
+        user.email || "";
+      profileName.textContent =
+        displayName;
+      profileEmail.textContent =
+        user.email || "-";
+      newName.value =
+        displayName !== "Étudiant"
+          ? displayName
+          : "";
+      if (user.photoURL) {
+        profilePhoto.src =
+          user.photoURL;
+      }
+      else {
+        profilePhoto.src =
+          "https://ui-avatars.com/api/?name=Etudiant&background=141830&color=00d9ff";
+      }
+      if (selectedLevel === "L1") {
+        profileLevel.textContent =
+          "Licence 1";
+        formationCard.href =
+          "l1.html";
+        formationDescription.textContent =
+          "Accède directement à ta Licence 1.";
+      }
+      else if (selectedLevel === "L2") {
+        profileLevel.textContent =
+          "Licence 2";
+        formationCard.href =
+          "l2.html";
+        formationDescription.textContent =
+          "Accède directement à ta Licence 2.";
+      }
+      else if (selectedLevel === "L3") {
+        profileLevel.textContent =
+          "Licence 3";
+        formationCard.href =
+          "l3.html";
+        formationDescription.textContent =
+          "Accède directement à ta Licence 3.";
+      }
+      else {
+        profileLevel.textContent =
+          "Aucun niveau sélectionné";
+        formationCard.href =
+          "licence.html";
+        formationDescription.textContent =
+          "Choisis ton niveau de Licence.";
+      }
+      /*
+        IMPORTANT :
+        Les cours passent maintenant
+        toujours par la page :
+        cours/index.html
+        Cette page permet ensuite
+        de choisir L1, L2 ou L3.
+      */
+      coursesCard.href =
+        "cours/index.html";
+      coursesDescription.textContent =
+        selectedLevel
+          ? "Accède aux cours de ton parcours."
+          : "Choisis ton niveau pour accéder aux cours.";
+    }
+    onAuthStateChanged(
+      auth,
+      async (user) => {
+        if (!user) {
+          window.location.href =
+            "connexion.html";
+          return;
+        }
+        await loadStudentData(user);
+      }
+    );
+    profileCard.addEventListener(
+      "click",
+      () => {
+        profilePanel.classList.add(
+          "visible"
+        );
+        profilePanel.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }
+    );
+    closeProfileBtn.addEventListener(
+      "click",
+      () => {
+        profilePanel.classList.remove(
+          "visible"
+        );
+      }
+    );
+    saveNameBtn.addEventListener(
+      "click",
+      async () => {
+        if (!currentUser) {
+          return;
+        }
+        const name =
+          newName.value.trim();
+        if (!name) {
+          nameMessage.textContent =
+            "Entre un nom avant d'enregistrer.";
+          return;
+        }
+        saveNameBtn.disabled =
+          true;
+        nameMessage.textContent =
+          "Enregistrement...";
+        try {
+          await setDoc(
+            doc(
+              db,
+              "users",
+              currentUser.uid
+            ),
+            {
+              displayName: name
+            },
+            {
+              merge: true
+            }
+          );
+          studentName.textContent =
+            name;
+          profileName.textContent =
+            name;
+          nameMessage.textContent =
+            "Nom enregistré avec succès.";
+        }
+        catch (error) {
+          console.error(
+            error
+          );
+          nameMessage.textContent =
+            "Une erreur est survenue.";
+        }
+        finally {
+          saveNameBtn.disabled =
+            false;
+        }
+      }
+    );
+    logoutBtn.addEventListener(
+      "click",
+      async () => {
+        try {
+          await signOut(auth);
+          localStorage.removeItem(
+            "segUndaLevel"
+          );
+          window.location.href =
+            "connexion.html";
+        }
+        catch (error) {
+          console.error(
+            "Erreur de déconnexion :",
+            error
+          );
+        }
+      }
+    );
+  </script>
+</body>
+</html>
