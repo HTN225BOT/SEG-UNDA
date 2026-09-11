@@ -1,1 +1,146 @@
+/* ============================= /
+/ PAGE DES COURS - SEG UNDA /
+/ ============================= */
 
+.courses-page {
+min-height: 78vh;
+padding: 75px 7%;
+background:
+radial-gradient(
+circle at 15% 20%,
+rgba(0, 217, 255, 0.10),
+transparent 30%
+),
+radial-gradient(
+circle at 85% 70%,
+rgba(124, 92, 255, 0.15),
+transparent 35%
+);
+}
+
+/* HERO */
+
+.courses-hero {
+max-width: 800px;
+margin: 0 auto 55px;
+text-align: center;
+}
+
+.courses-label {
+margin-bottom: 12px;
+color: #00d9ff;
+font-size: 0.85rem;
+font-weight: bold;
+letter-spacing: 3px;
+}
+
+.courses-hero h1 {
+margin-bottom: 18px;
+font-size: 3rem;
+line-height: 1.15;
+}
+
+.courses-hero p:last-child {
+max-width: 680px;
+margin: auto;
+color: #aeb6d0;
+font-size: 1.05rem;
+}
+
+/* CARTES DES NIVEAUX */
+
+.course-levels {
+max-width: 1100px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+}
+
+.course-card {
+display: block;
+padding: 35px 25px;
+text-align: center;
+text-decoration: none;
+color: #ffffff;
+border-radius: 22px;
+background: rgba(20, 24, 48, 0.78);
+border: 1px solid rgba(124, 92, 255, 0.28);
+box-shadow:
+0 20px 45px rgba(0, 0, 0, 0.20);
+transition: 0.3s ease;
+}
+
+.course-card:hover {
+transform: translateY(-7px);
+border-color: rgba(0, 217, 255, 0.60);
+box-shadow:
+0 20px 45px rgba(0, 0, 0, 0.25),
+0 0 28px rgba(0, 217, 255, 0.10);
+}
+
+/* ICÔNES */
+
+.course-icon {
+width: 75px;
+height: 75px;
+margin: 0 auto 22px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 20px;
+background: rgba(0, 217, 255, 0.08);
+border: 1px solid rgba(0, 217, 255, 0.22);
+font-size: 2.2rem;
+}
+
+/* TITRES */
+
+.course-card h2 {
+margin-bottom: 12px;
+font-size: 1.4rem;
+}
+
+.course-card p {
+min-height: 48px;
+color: #aeb6d0;
+font-size: 0.95rem;
+}
+
+/* LIEN */
+
+.course-link {
+display: inline-block;
+margin-top: 20px;
+color: #00d9ff;
+font-weight: bold;
+font-size: 0.9rem;
+transition: 0.3s ease;
+}
+
+.course-card:hover .course-link {
+transform: translateX(4px);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+.courses-page {
+padding: 55px 7%;
+}
+
+.courses-hero h1 {
+font-size: 2.3rem;
+}
+
+.course-levels {
+grid-template-columns: 1fr;
+gap: 20px;
+}
+
+.course-card {
+padding: 30px 22px;
+}
+
+}
