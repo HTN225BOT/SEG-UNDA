@@ -1,1 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Formations | SEG UNDA</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .formations-page {
+      min-height: 78vh;
+      padding: 70px 7%;
+    }
+
+    .formations-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .formations-header h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .formations-header p {
+      font-size: 17px;
+      opacity: 0.8;
+    }
+
+    .licence-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .licence-card {
+      padding: 30px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .licence-card h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .licence-card p {
+      opacity: 0.8;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .licence-btn {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #00e5ff, #8a2be2);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .licence-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 229, 255, 0.25);
+    }
+
+    @media (max-width: 800px) {
+      .licence-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .formations-header h1 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <strong>SEG</strong> <span>UNDA</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="licence.html">Formations</a>
+      <a href="index.html#apropos">À propos</a>
+    </nav>
+
+    <a href="connexion.html" class="header-btn">Connexion</a>
+  </header>
+
+  <main class="formations-page">
+
+    <div class="formations-header">
+      <h1>Les cycles de Licence</h1>
+      <p>Choisis ton niveau pour accéder aux cours et aux matières correspondantes.</p>
+    </div>
+
+    <div class="licence-grid">
+
+      <div class="licence-card">
+        <h2>Licence 1</h2>
+        <p>
+          Découvre les cours et les matières de première année.
+        </p>
+
+        <a href="l1.html" class="licence-btn" data-level="L1">
+          Découvrir L1
+        </a>
+      </div>
+
+      <div class="licence-card">
+        <h2>Licence 2</h2>
+        <p>
+          Accède aux cours et aux matières de deuxième année.
+        </p>
+
+        <a href="l2.html" class="licence-btn" data-level="L2">
+          Découvrir L2
+        </a>
+      </div>
+
+      <div class="licence-card">
+        <h2>Licence 3</h2>
+        <p>
+          Accède aux cours et aux matières de troisième année.
+        </p>
+
+        <a href="l3.html" class="licence-btn" data-level="L3">
+          Découvrir L3
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 SEG UNDA — Sciences Économiques et de Gestion</p>
+    <p>MICHAEL — Étudiant</p>
+  </footer>
+
+
+  <!-- FIREBASE -->
+  <script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+    import {
+      getAuth,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+    import {
+      getFirestore,
+      doc,
+      setDoc
+    } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyC4ejbTOO1G3XbwDJ5KYH6-CiYcdQqr68k",
+      authDomain: "seg-unda.firebaseapp.com",
+      projectId: "seg-unda",
+      storageBucket: "seg-unda.firebasestorage.app",
+      messagingSenderId: "1076997262231",
+      appId: "1:1076997262231:web:31b640fa8fd5991e8612d2"
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+
+    const auth = getAuth(app);
+
+    const db = getFirestore(app);
+
+
+    let currentUser = null;
+
+
+    onAuthStateChanged(auth, (user) => {
+      currentUser = user;
+    });
+
+
+    const levelButtons = document.querySelectorAll(".licence-btn");
+
+
+    levelButtons.forEach((button) => {
+
+      button.addEventListener("click", async () => {
+
+        const level = button.dataset.level;
+
+        /*
+          On garde aussi le niveau localement
+          pour que le fonctionnement actuel
+          continue immédiatement.
+        */
+        localStorage.setItem("segUndaLevel", level);
+
+
+        /*
+          Si l'étudiant est connecté,
+          on sauvegarde également son niveau
+          dans Firebase Firestore.
+        */
+        if (currentUser) {
+
+          try {
+
+            await setDoc(
+              doc(db, "users", currentUser.uid),
+              {
+                level: level
+              },
+              {
+                merge: true
+              }
+            );
+
+            console.log("Niveau enregistré :", level);
+
+          } catch (error) {
+
+            console.error(
+              "Erreur lors de l'enregistrement du niveau :",
+              error
+            );
+
+          }
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
