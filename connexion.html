@@ -1,1 +1,981 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Connexion | SEG UNDA</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(91, 64, 160, 0.35), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(0, 200, 220, 0.20), transparent 35%),
+        #090714;
+      color: white;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(9, 7, 20, 0.85);
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .logo img {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .logo span {
+      color: #69e8ff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #d8d4e7;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #69e8ff;
+    }
+
+    .header-btn {
+      padding: 10px 18px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #7048d8, #39c6d9);
+      color: white;
+      font-weight: bold;
+    }
+
+    .login-page {
+      min-height: calc(100vh - 90px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 470px;
+      padding: 42px 35px;
+      border-radius: 22px;
+      background: rgba(19, 15, 35, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+      text-align: center;
+    }
+
+    .login-icon {
+      width: 78px;
+      height: 78px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #7048d8, #39c6d9);
+      box-shadow: 0 10px 35px rgba(75, 130, 220, 0.25);
+    }
+
+    .login-icon svg {
+      width: 38px;
+      height: 38px;
+      fill: white;
+    }
+
+    .login-card h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .login-card > p {
+      color: #aaa5bd;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .login-form {
+      text-align: left;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #ddd8e8;
+    }
+
+    .field input {
+      width: 100%;
+      padding: 14px 15px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      outline: none;
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .field input:focus {
+      border-color: #69e8ff;
+      box-shadow: 0 0 0 3px rgba(105, 232, 255, 0.10);
+    }
+
+    .password-box {
+      position: relative;
+    }
+
+    .password-box input {
+      padding-right: 50px;
+    }
+
+    .show-password {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #aaa5bd;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .forgot {
+      display: block;
+      text-align: right;
+      margin-top: -8px;
+      margin-bottom: 20px;
+      color: #69e8ff;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #7048d8, #39c6d9);
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(65, 160, 220, 0.20);
+    }
+
+    .login-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 25px 0;
+      color: #777185;
+      font-size: 13px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: rgba(255, 255, 255, 0.10);
+    }
+
+    .google-btn {
+      width: 100%;
+      padding: 13px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: 0.3s;
+    }
+
+    .google-btn:hover {
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    .google-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .google-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .message {
+      min-height: 24px;
+      margin-top: 18px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #69e8ff;
+    }
+
+    .register {
+      margin-top: 25px;
+      color: #aaa5bd;
+      font-size: 14px;
+    }
+
+    .register a {
+      color: #69e8ff;
+      cursor: pointer;
+    }
+
+    .info {
+      margin-top: 25px;
+      padding: 13px;
+      border-radius: 10px;
+      background: rgba(105, 232, 255, 0.06);
+      border: 1px solid rgba(105, 232, 255, 0.10);
+      color: #aaa5bd;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 22px;
+      color: #aaa5bd;
+      font-size: 13px;
+      transition: 0.3s;
+    }
+
+    .back-home:hover {
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #777185;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        display: none;
+      }
+
+      header {
+        padding: 15px 5%;
+      }
+
+      .login-page {
+        padding: 40px 15px;
+      }
+
+      .login-card {
+        padding: 35px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <a href="index.html" class="logo">
+      <img src="seg-unda-logo.png" alt="Logo SEG UNDA">
+
+      <div>
+        SEG <span>UNDA</span>
+      </div>
+    </a>
+
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="licence.html">Formations</a>
+      <a href="licence.html">Cours</a>
+      <a href="index.html#apropos">À propos</a>
+      <a href="connexion.html" class="header-btn">Connexion</a>
+    </nav>
+
+  </header>
+
+
+  <main class="login-page">
+
+    <div class="login-card">
+
+      <div class="login-icon">
+
+        <svg viewBox="0 0 24 24">
+          <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"/>
+        </svg>
+
+      </div>
+
+
+      <h1>Bienvenue</h1>
+
+      <p>
+        Connecte-toi à ton espace SEG UNDA.
+      </p>
+
+
+      <form class="login-form" id="loginForm">
+
+        <div class="field">
+
+          <label for="email">
+            Adresse e-mail
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="exemple@email.com"
+            autocomplete="email"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="password">
+            Mot de passe
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Ton mot de passe"
+              autocomplete="current-password"
+              required
+            >
+
+            <button
+              type="button"
+              class="show-password"
+              id="showPassword"
+            >
+              Afficher
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <a
+          class="forgot"
+          id="forgotPassword"
+        >
+          Mot de passe oublié ?
+        </a>
+
+
+        <button
+          type="submit"
+          class="login-btn"
+          id="loginBtn"
+        >
+          Se connecter
+        </button>
+
+      </form>
+
+
+      <div class="divider">
+        OU
+      </div>
+
+
+      <button
+        type="button"
+        class="google-btn"
+        id="googleBtn"
+      >
+
+        <svg
+          class="google-icon"
+          viewBox="0 0 24 24"
+        >
+
+          <path
+            fill="#4285F4"
+            d="M21.35 12.27c0-.79-.07-1.55-.23-2.27H12v4.3h5.22a4.46 4.46 0 0 1-1.94 2.93v2.43h3.14c1.84-1.69 2.93-4.18 2.93-7.39z"
+          />
+
+          <path
+            fill="#34A853"
+            d="M12 21.75c2.63 0 4.84-.87 6.45-2.35l-3.14-2.43c-.87.58-1.98.92-3.31.92-2.54 0-4.69-1.72-5.46-4.03H3.29v2.5A9.75 9.75 0 0 0 12 21.75z"
+          />
+
+          <path
+            fill="#FBBC05"
+            d="M6.54 13.86A5.86 5.86 0 0 1 6.23 12c0-.64.11-1.26.31-1.86v-2.5H3.29A9.75 9.75 0 0 0 2.25 12c0 1.57.38 3.05 1.04 4.36l3.25-2.5z"
+          />
+
+          <path
+            fill="#EA4335"
+            d="M12 6.11c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.84 3.17 14.63 2.25 12 2.25a9.75 9.75 0 0 0-8.71 5.39l3.25 2.5C7.31 7.83 9.46 6.11 12 6.11z"
+          />
+
+        </svg>
+
+        Continuer avec Google
+
+      </button>
+
+
+      <div
+        class="message"
+        id="loginMessage"
+      ></div>
+
+
+      <div class="register">
+
+        Pas encore de compte ?
+
+        <a id="registerLink">
+          Créer un compte
+        </a>
+
+      </div>
+
+
+      <div class="info">
+        Ton espace étudiant SEG UNDA.
+      </div>
+
+
+      <a
+        href="index.html"
+        class="back-home"
+      >
+        ← Retour à l'accueil
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+
+    <strong>SEG UNDA</strong>
+    — Sciences Économiques et de Gestion
+
+    <br><br>
+
+    MICHAEL
+    <br>
+
+    Étudiant
+
+  </footer>
+
+
+  <script type="module">
+
+    import {
+      initializeApp
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+
+    import {
+      getAuth,
+      GoogleAuthProvider,
+      signInWithPopup,
+      signInWithEmailAndPassword,
+      createUserWithEmailAndPassword,
+      sendPasswordResetEmail,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+    /* ==============================
+       FIREBASE
+       ============================== */
+
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyC4ejbTOO1G3XbwDJ5KYH6-CiYcdQqr68k",
+
+      authDomain: "seg-unda.firebaseapp.com",
+
+      projectId: "seg-unda",
+
+      storageBucket: "seg-unda.firebasestorage.app",
+
+      messagingSenderId: "1076997262231",
+
+      appId: "1:1076997262231:web:31b640fa8fd5991e8612d2"
+
+    };
+
+
+    const app =
+      initializeApp(firebaseConfig);
+
+    const auth =
+      getAuth(app);
+
+    const provider =
+      new GoogleAuthProvider();
+
+
+    /* ==============================
+       ELEMENTS
+       ============================== */
+
+    const loginForm =
+      document.getElementById("loginForm");
+
+    const emailInput =
+      document.getElementById("email");
+
+    const passwordInput =
+      document.getElementById("password");
+
+    const loginBtn =
+      document.getElementById("loginBtn");
+
+    const googleBtn =
+      document.getElementById("googleBtn");
+
+    const loginMessage =
+      document.getElementById("loginMessage");
+
+    const registerLink =
+      document.getElementById("registerLink");
+
+    const forgotPassword =
+      document.getElementById("forgotPassword");
+
+    const showPassword =
+      document.getElementById("showPassword");
+
+
+    let isRedirecting = false;
+
+
+    /* ==============================
+       MESSAGE
+       ============================== */
+
+    function showMessage(message) {
+
+      loginMessage.textContent =
+        message;
+
+    }
+
+
+    /* ==============================
+       ERREURS
+       ============================== */
+
+    function firebaseError(error) {
+
+      console.error(error);
+
+      switch (error.code) {
+
+        case "auth/invalid-email":
+          return "L'adresse e-mail n'est pas valide.";
+
+        case "auth/user-not-found":
+          return "Aucun compte ne correspond à cette adresse e-mail.";
+
+        case "auth/wrong-password":
+          return "Le mot de passe est incorrect.";
+
+        case "auth/invalid-credential":
+          return "L'adresse e-mail ou le mot de passe est incorrect.";
+
+        case "auth/email-already-in-use":
+          return "Cette adresse e-mail possède déjà un compte.";
+
+        case "auth/weak-password":
+          return "Le mot de passe doit contenir au moins 6 caractères.";
+
+        case "auth/network-request-failed":
+          return "Problème de connexion Internet.";
+
+        case "auth/unauthorized-domain":
+          return "Ce domaine n'est pas autorisé dans Firebase.";
+
+        case "auth/operation-not-allowed":
+          return "Cette méthode de connexion n'est pas activée dans Firebase.";
+
+        case "auth/popup-closed-by-user":
+          return "La fenêtre Google a été fermée.";
+
+        case "auth/popup-blocked":
+          return "Le navigateur a bloqué la fenêtre Google.";
+
+        case "auth/account-exists-with-different-credential":
+          return "Cette adresse e-mail est déjà associée à une autre méthode de connexion.";
+
+        default:
+          return "Une erreur est survenue. Réessaie.";
+
+      }
+
+    }
+
+
+    /* ==============================
+       REDIRECTION
+       ============================== */
+
+    function redirectToHome() {
+
+      if (isRedirecting) {
+        return;
+      }
+
+      isRedirecting = true;
+
+      showMessage(
+        "Connexion réussie ! Redirection..."
+      );
+
+      setTimeout(() => {
+
+        window.location.replace(
+          "./index.html"
+        );
+
+      }, 500);
+
+    }
+
+
+    /* ==============================
+       SURVEILLER L'AUTHENTIFICATION
+       ============================== */
+
+    onAuthStateChanged(auth, (user) => {
+
+      if (user) {
+
+        console.log(
+          "Utilisateur connecté :",
+          user.email
+        );
+
+        redirectToHome();
+
+      }
+
+    });
+
+
+    /* ==============================
+       CONNEXION EMAIL
+       ============================== */
+
+    loginForm.addEventListener(
+      "submit",
+      async (event) => {
+
+        event.preventDefault();
+
+        const email =
+          emailInput.value.trim();
+
+        const password =
+          passwordInput.value;
+
+
+        if (!email || !password) {
+
+          showMessage(
+            "Remplis tous les champs."
+          );
+
+          return;
+
+        }
+
+
+        loginBtn.disabled = true;
+
+        showMessage(
+          "Connexion en cours..."
+        );
+
+
+        try {
+
+          await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+          );
+
+        } catch (error) {
+
+          showMessage(
+            firebaseError(error)
+          );
+
+          loginBtn.disabled = false;
+
+        }
+
+      }
+    );
+
+
+    /* ==============================
+       GOOGLE
+       ============================== */
+
+    googleBtn.addEventListener(
+      "click",
+      async () => {
+
+        googleBtn.disabled = true;
+
+        showMessage(
+          "Ouverture de Google..."
+        );
+
+
+        try {
+
+          const result =
+            await signInWithPopup(
+              auth,
+              provider
+            );
+
+
+          if (result && result.user) {
+
+            console.log(
+              "Google connecté :",
+              result.user.email
+            );
+
+            redirectToHome();
+
+          }
+
+        } catch (error) {
+
+          googleBtn.disabled = false;
+
+          showMessage(
+            firebaseError(error)
+          );
+
+        }
+
+      }
+    );
+
+
+    /* ==============================
+       CREATION DE COMPTE
+       ============================== */
+
+    registerLink.addEventListener(
+      "click",
+      async () => {
+
+        const email =
+          emailInput.value.trim();
+
+        const password =
+          passwordInput.value;
+
+
+        if (!email || !password) {
+
+          showMessage(
+            "Entre d'abord une adresse e-mail et un mot de passe."
+          );
+
+          return;
+
+        }
+
+
+        loginBtn.disabled = true;
+
+        showMessage(
+          "Création du compte..."
+        );
+
+
+        try {
+
+          await createUserWithEmailAndPassword(
+            auth,
+            email,
+            password
+          );
+
+        } catch (error) {
+
+          showMessage(
+            firebaseError(error)
+          );
+
+          loginBtn.disabled = false;
+
+        }
+
+      }
+    );
+
+
+    /* ==============================
+       MOT DE PASSE OUBLIÉ
+       ============================== */
+
+    forgotPassword.addEventListener(
+      "click",
+      async () => {
+
+        const email =
+          emailInput.value.trim();
+
+
+        if (!email) {
+
+          showMessage(
+            "Entre ton adresse e-mail pour recevoir le lien de réinitialisation."
+          );
+
+          emailInput.focus();
+
+          return;
+
+        }
+
+
+        try {
+
+          await sendPasswordResetEmail(
+            auth,
+            email
+          );
+
+          showMessage(
+            "Un e-mail de réinitialisation vient d'être envoyé."
+          );
+
+        } catch (error) {
+
+          showMessage(
+            firebaseError(error)
+          );
+
+        }
+
+      }
+    );
+
+
+    /* ==============================
+       AFFICHER / MASQUER MOT DE PASSE
+       ============================== */
+
+    showPassword.addEventListener(
+      "click",
+      () => {
+
+        if (
+          passwordInput.type === "password"
+        ) {
+
+          passwordInput.type = "text";
+
+          showPassword.textContent =
+            "Masquer";
+
+        } else {
+
+          passwordInput.type = "password";
+
+          showPassword.textContent =
+            "Afficher";
+
+        }
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
