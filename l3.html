@@ -1,1 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Licence 3 | SEG UNDA</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .cours-page {
+      min-height: 78vh;
+      padding: 70px 7%;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(0, 217, 255, 0.10), transparent 35%),
+        radial-gradient(circle at 85% 75%, rgba(124, 92, 255, 0.18), transparent 35%);
+    }
+
+    .cours-intro {
+      max-width: 750px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .cours-intro span {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: #00d9ff;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .cours-intro h1 {
+      margin-bottom: 15px;
+      font-size: 2.8rem;
+    }
+
+    .cours-intro p {
+      color: #aeb6d0;
+    }
+
+    .cours-container {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .cours-card {
+      padding: 25px;
+      background: rgba(20, 24, 48, 0.80);
+      border: 1px solid rgba(124, 92, 255, 0.30);
+      border-radius: 18px;
+      transition: 0.3s ease;
+    }
+
+    .cours-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 217, 255, 0.55);
+      box-shadow: 0 0 25px rgba(0, 217, 255, 0.10);
+    }
+
+    .cours-card h2 {
+      margin-bottom: 8px;
+      color: #ffffff;
+      font-size: 1.15rem;
+    }
+
+    .cours-card p {
+      color: #8f98b3;
+      font-size: 0.88rem;
+    }
+
+    .cours-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 15px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7c5cff, #00d9ff);
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+
+    .back-link {
+      display: block;
+      width: fit-content;
+      margin: 40px auto 0;
+      color: #8f98b3;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #00d9ff;
+    }
+
+    @media (max-width: 700px) {
+      .cours-container {
+        grid-template-columns: 1fr;
+      }
+
+      .cours-intro h1 {
+        font-size: 2.3rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <div class="logo">
+      SEG <span>UNDA</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="licence.html">Formations</a>
+      <a href="licence.html">Cours</a>
+      <a href="index.html#apropos">À propos</a>
+    </nav>
+
+    <a href="#" class="header-btn">
+      Connexion
+    </a>
+
+  </header>
+
+
+  <main class="cours-page">
+
+    <div class="cours-intro">
+
+      <span>
+        SCIENCES ÉCONOMIQUES &amp; DE GESTION
+      </span>
+
+      <h1>
+        Licence <span style="color:#00d9ff;">3</span>
+      </h1>
+
+      <p>
+        Prépare-toi à la dernière étape du cycle
+        de Licence en Sciences Économiques et de Gestion.
+      </p>
+
+    </div>
+
+
+    <div class="cours-container">
+
+      <div class="cours-card">
+        <div class="cours-number">01</div>
+        <h2>Économie approfondie</h2>
+        <p>
+          Analyse approfondie des théories et mécanismes
+          économiques.
+        </p>
+      </div>
+
+      <div class="cours-card">
+        <div class="cours-number">02</div>
+        <h2>Économétrie</h2>
+        <p>
+          Utilisation des méthodes quantitatives pour
+          analyser les phénomènes économiques.
+        </p>
+      </div>
+
+      <div class="cours-card">
+        <div class="cours-number">03</div>
+        <h2>Finance d'entreprise</h2>
+        <p>
+          Étude des décisions financières et de la gestion
+          des ressources de l'entreprise.
+        </p>
+      </div>
+
+      <div class="cours-card">
+        <div class="cours-number">04</div>
+        <h2>Marketing</h2>
+        <p>
+          Analyse du marché, des consommateurs et des
+          stratégies commerciales.
+        </p>
+      </div>
+
+      <div class="cours-card">
+        <div class="cours-number">05</div>
+        <h2>Gestion des ressources humaines</h2>
+        <p>
+          Principes de gestion et de développement
+          des ressources humaines.
+        </p>
+      </div>
+
+      <div class="cours-card">
+        <div class="cours-number">06</div>
+        <h2>Entrepreneuriat</h2>
+        <p>
+          Découverte de la création, du développement
+          et de la gestion d'une entreprise.
+        </p>
+      </div>
+
+    </div>
+
+
+    <a href="licence.html" class="back-link">
+      ← Retour aux formations
+    </a>
+
+  </main>
+
+
+  <footer>
+
+    <p>
+      SEG UNDA — Sciences Économiques et de Gestion
+    </p>
+
+    <div class="signature">
+      <span class="michael">MICHAEL</span>
+      <small>Étudiant</small>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
