@@ -1,1 +1,254 @@
-      
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formations | SEG UNDA</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .formations-page {
+      min-height: 78vh;
+      padding: 70px 7%;
+      text-align: center;
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(0, 217, 255, 0.10),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 80% 70%,
+          rgba(124, 92, 255, 0.18),
+          transparent 35%
+        );
+    }
+    .formations-intro {
+      max-width: 700px;
+      margin: 0 auto 50px;
+    }
+    .formations-intro span {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: #00d9ff;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .formations-intro h1 {
+      margin-bottom: 15px;
+      font-size: 2.8rem;
+    }
+    .formations-intro p {
+      color: #aeb6d0;
+      font-size: 1rem;
+    }
+    .licence-container {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .licence-card {
+      position: relative;
+      padding: 35px 25px;
+      border-radius: 22px;
+      background: rgba(20, 24, 48, 0.80);
+      border: 1px solid rgba(124, 92, 255, 0.30);
+      box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.20);
+      transition: 0.35s ease;
+      overflow: hidden;
+    }
+    .licence-card::before {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      top: -60px;
+      right: -60px;
+      background: rgba(0, 217, 255, 0.12);
+      border-radius: 50%;
+    }
+    .licence-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0, 217, 255, 0.55);
+      box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.30),
+        0 0 25px rgba(0, 217, 255, 0.10);
+    }
+    .licence-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 65px;
+      height: 65px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+      background: linear-gradient(
+        135deg,
+        #7c5cff,
+        #00d9ff
+      );
+      color: white;
+      font-size: 1.3rem;
+      font-weight: bold;
+      box-shadow:
+        0 0 20px rgba(0, 217, 255, 0.18);
+    }
+    .licence-card h2 {
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+    }
+    .licence-card p {
+      min-height: 55px;
+      margin-bottom: 25px;
+      color: #aeb6d0;
+      font-size: 0.9rem;
+    }
+    .licence-btn {
+      display: inline-block;
+      width: 100%;
+      padding: 12px 20px;
+      border: 1px solid rgba(0, 217, 255, 0.45);
+      border-radius: 30px;
+      background: rgba(0, 217, 255, 0.07);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+    .licence-btn:hover {
+      background: linear-gradient(
+        135deg,
+        #7c5cff,
+        #00d9ff
+      );
+      border-color: transparent;
+      box-shadow:
+        0 0 22px rgba(0, 217, 255, 0.25);
+      transform: translateY(-2px);
+    }
+    .back-home {
+      display: inline-block;
+      margin-top: 45px;
+      color: #8f98b3;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: 0.3s ease;
+    }
+    .back-home:hover {
+      color: #00d9ff;
+    }
+    @media (max-width: 850px) {
+      .licence-container {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+      }
+      .formations-intro h1 {
+        font-size: 2.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+<div class="logo">
+  SEG <span>UNDA</span>
+</div>
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="licence.html">Formations</a>
+  <a href="licence.html">Cours</a>
+  <a href="index.html#apropos">À propos</a>
+</nav>
+<a href="#" class="header-btn">
+  Connexion
+</a>
+  </header>
+  <!-- FORMATIONS -->
+  <main class="formations-page">
+<div class="formations-intro">
+  <span>
+    FORMATIONS UNIVERSITAIRES
+  </span>
+  <h1>
+    Les cycles de
+    <span style="color:#00d9ff;">
+      Licence
+    </span>
+  </h1>
+  <p>
+    Choisis ton niveau pour découvrir les cours
+    et les matières correspondant à ton parcours
+    en Sciences Économiques et de Gestion.
+  </p>
+</div>
+<!-- LICENCES -->
+<div class="licence-container">
+  <!-- LICENCE 1 -->
+  <div class="licence-card">
+    <div class="licence-number">
+      L1
+    </div>
+    <h2>
+      Licence 1
+    </h2>
+    <p>
+      Découvre les enseignements fondamentaux
+      de la première année.
+    </p>
+    <a href="l1.html" class="licence-btn">
+      Découvrir L1
+    </a>
+  </div>
+  <!-- LICENCE 2 -->
+  <div class="licence-card">
+    <div class="licence-number">
+      L2
+    </div>
+    <h2>
+      Licence 2
+    </h2>
+    <p>
+      Approfondis tes connaissances et poursuis
+      ton parcours universitaire.
+    </p>
+    <a href="l2.html" class="licence-btn">
+      Découvrir L2
+    </a>
+  </div>
+  <!-- LICENCE 3 -->
+  <div class="licence-card">
+    <div class="licence-number">
+      L3
+    </div>
+    <h2>
+      Licence 3
+    </h2>
+    <p>
+      Prépare-toi à la dernière étape du cycle
+      de Licence.
+    </p>
+    <a href="l3.html" class="licence-btn">
+      Découvrir L3
+    </a>
+  </div>
+</div>
+<a href="index.html" class="back-home">
+  ← Retour à l'accueil
+</a>
+  </main>
+  <!-- FOOTER -->
+  <footer>
+<p>
+  SEG UNDA — Sciences Économiques et de Gestion
+</p>
+<div class="signature">
+  <span class="michael">MICHAEL</span>
+  <small>Étudiant</small>
+</div>
+  </footer>
+</body>
+</html>
