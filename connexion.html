@@ -1,1 +1,801 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Connexion | SEG UNDA</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ==============================
+       PAGE CONNEXION
+       ============================== */
+
+    .login-page {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 7%;
+
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(0, 217, 255, 0.12),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 80% 80%,
+          rgba(124, 92, 255, 0.18),
+          transparent 35%
+        );
+    }
+
+
+    /* ==============================
+       CARTE DE CONNEXION
+       ============================== */
+
+    .login-card {
+      width: 100%;
+      max-width: 430px;
+
+      padding: 40px 32px;
+
+      background: rgba(20, 24, 48, 0.88);
+
+      border: 1px solid rgba(124, 92, 255, 0.35);
+
+      border-radius: 25px;
+
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(0, 217, 255, 0.06);
+
+      text-align: center;
+    }
+
+
+    /* ==============================
+       ICÔNE UTILISATEUR
+       ============================== */
+
+    .login-icon {
+      width: 70px;
+      height: 70px;
+
+      margin: 0 auto 22px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: linear-gradient(
+        135deg,
+        #7c5cff,
+        #00d9ff
+      );
+
+      color: white;
+
+      box-shadow:
+        0 0 25px rgba(0, 217, 255, 0.20);
+    }
+
+    .login-icon svg {
+      width: 36px;
+      height: 36px;
+    }
+
+
+    /* ==============================
+       TITRE
+       ============================== */
+
+    .login-card h1 {
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    .login-card > p {
+      margin-bottom: 30px;
+
+      color: #aeb6d0;
+
+      font-size: 0.92rem;
+    }
+
+
+    /* ==============================
+       FORMULAIRE
+       ============================== */
+
+    .login-form {
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: #ffffff;
+
+      font-size: 0.9rem;
+
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+
+      padding: 14px 16px;
+
+      box-sizing: border-box;
+
+      border: 1px solid rgba(124, 92, 255, 0.35);
+
+      border-radius: 13px;
+
+      background: rgba(8, 11, 24, 0.75);
+
+      color: white;
+
+      outline: none;
+
+      font-size: 0.95rem;
+
+      transition: 0.3s ease;
+    }
+
+    .form-group input:focus {
+      border-color: #00d9ff;
+
+      box-shadow:
+        0 0 15px rgba(0, 217, 255, 0.12);
+    }
+
+
+    /* ==============================
+       MOT DE PASSE
+       ============================== */
+
+    .password-box {
+      position: relative;
+    }
+
+    .password-box input {
+      padding-right: 60px;
+    }
+
+    .show-password {
+      position: absolute;
+
+      right: 12px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      border: none;
+
+      background: transparent;
+
+      color: #8f98b3;
+
+      font-size: 0.8rem;
+
+      cursor: pointer;
+    }
+
+    .show-password:hover {
+      color: #00d9ff;
+    }
+
+
+    /* ==============================
+       MOT DE PASSE OUBLIÉ
+       ============================== */
+
+    .forgot-password {
+      display: block;
+
+      margin-top: -5px;
+      margin-bottom: 25px;
+
+      color: #00d9ff;
+
+      text-decoration: none;
+
+      font-size: 0.85rem;
+
+      text-align: right;
+    }
+
+
+    /* ==============================
+       BOUTON CONNEXION
+       ============================== */
+
+    .login-btn {
+      width: 100%;
+
+      padding: 14px 20px;
+
+      border: none;
+
+      border-radius: 30px;
+
+      background: linear-gradient(
+        135deg,
+        #7c5cff,
+        #00d9ff
+      );
+
+      color: white;
+
+      font-size: 1rem;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 0 25px rgba(0, 217, 255, 0.15);
+
+      transition: 0.3s ease;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 0 30px rgba(0, 217, 255, 0.25);
+    }
+
+
+    /* ==============================
+       BOUTON GOOGLE
+       ============================== */
+
+    .google-btn {
+      width: 100%;
+
+      margin-top: 14px;
+
+      padding: 13px 20px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 12px;
+
+      border: 1px solid rgba(255, 255, 255, 0.15);
+
+      border-radius: 30px;
+
+      background: rgba(255, 255, 255, 0.06);
+
+      color: white;
+
+      font-size: 0.95rem;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+      transition: 0.3s ease;
+    }
+
+    .google-btn:hover {
+      border-color: #00d9ff;
+
+      background: rgba(0, 217, 255, 0.08);
+
+      transform: translateY(-2px);
+    }
+
+    .google-logo {
+      width: 20px;
+      height: 20px;
+
+      flex-shrink: 0;
+    }
+
+
+    /* ==============================
+       MESSAGES
+       ============================== */
+
+    .login-message {
+      margin-top: 18px;
+
+      font-size: 0.85rem;
+
+      color: #00d9ff;
+
+      min-height: 20px;
+    }
+
+    .login-info {
+      margin-top: 25px;
+
+      color: #8f98b3;
+
+      font-size: 0.8rem;
+    }
+
+
+    /* ==============================
+       RETOUR ACCUEIL
+       ============================== */
+
+    .back-home {
+      display: inline-block;
+
+      margin-top: 25px;
+
+      color: #8f98b3;
+
+      text-decoration: none;
+
+      font-size: 0.9rem;
+
+      transition: 0.3s ease;
+    }
+
+    .back-home:hover {
+      color: #00d9ff;
+    }
+
+
+    /* ==============================
+       MOBILE
+       ============================== */
+
+    @media (max-width: 500px) {
+
+      .login-page {
+        padding: 45px 5%;
+      }
+
+      .login-card {
+        padding: 32px 22px;
+      }
+
+      .login-card h1 {
+        font-size: 1.7rem;
+      }
+
+    }
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- ==============================
+       HEADER
+       ============================== -->
+
+  <header>
+
+    <div class="logo">
+      <img
+        src="seg-unda-logo.png"
+        alt="Logo SEG UNDA"
+      >
+    </div>
+
+    <nav>
+
+      <a href="index.html">
+        Accueil
+      </a>
+
+      <a href="licence.html">
+        Formations
+      </a>
+
+      <a href="licence.html">
+        Cours
+      </a>
+
+      <a href="index.html#apropos">
+        À propos
+      </a>
+
+    </nav>
+
+    <a
+      href="connexion.html"
+      class="header-btn"
+    >
+      Connexion
+    </a>
+
+  </header>
+
+
+  <!-- ==============================
+       CONNEXION
+       ============================== -->
+
+  <main class="login-page">
+
+    <div class="login-card">
+
+
+      <!-- ICÔNE UTILISATEUR -->
+
+      <div class="login-icon">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <circle
+            cx="12"
+            cy="8"
+            r="4"
+            stroke="white"
+            stroke-width="2"
+          />
+
+          <path
+            d="M4 21C4.8 16.8 7.4 14 12 14C16.6 14 19.2 16.8 20 21"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+
+        </svg>
+
+      </div>
+
+
+      <h1>
+        Bienvenue
+      </h1>
+
+      <p>
+        Connecte-toi à ton espace SEG UNDA.
+      </p>
+
+
+      <!-- FORMULAIRE -->
+
+      <form
+        class="login-form"
+        id="loginForm"
+      >
+
+        <div class="form-group">
+
+          <label for="email">
+            Adresse e-mail
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="exemple@email.com"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="password">
+            Mot de passe
+          </label>
+
+          <div class="password-box">
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Ton mot de passe"
+              required
+            >
+
+            <button
+              type="button"
+              class="show-password"
+              onclick="togglePassword()"
+            >
+              Afficher
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <a
+          href="#"
+          class="forgot-password"
+        >
+          Mot de passe oublié ?
+        </a>
+
+
+        <button
+          type="submit"
+          class="login-btn"
+        >
+          Se connecter
+        </button>
+
+      </form>
+
+
+      <!-- CONNEXION GOOGLE -->
+
+      <button
+        type="button"
+        class="google-btn"
+        id="googleBtn"
+      >
+
+        <svg
+          class="google-logo"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <path
+            fill="#4285F4"
+            d="M21.35 12.23c0-.79-.07-1.55-.23-2.27H12v4.3h5.23a4.47 4.47 0 0 1-1.94 2.93v2.42h3.14c1.84-1.69 2.92-4.18 2.92-7.38z"
+          />
+
+          <path
+            fill="#34A853"
+            d="M12 21.67c2.63 0 4.84-.87 6.45-2.36l-3.14-2.42c-.87.58-1.98.93-3.31.93-2.54 0-4.69-1.72-5.46-4.03H3.3v2.5A9.75 9.75 0 0 0 12 21.67z"
+          />
+
+          <path
+            fill="#FBBC05"
+            d="M6.54 13.79A5.86 5.86 0 0 1 6.23 12c0-.62.11-1.22.31-1.79v-2.5H3.3A9.75 9.75 0 0 0 2.25 12c0 1.57.38 3.05 1.05 4.29l3.24-2.5z"
+          />
+
+          <path
+            fill="#EA4335"
+            d="M12 6.18c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.84 3.26 14.63 2.33 12 2.33a9.75 9.75 0 0 0-8.7 5.38l3.24 2.5C7.31 7.9 9.46 6.18 12 6.18z"
+          />
+
+        </svg>
+
+        <span>
+          Se connecter avec Google
+        </span>
+
+      </button>
+
+
+      <!-- MESSAGE -->
+
+      <div
+        class="login-message"
+        id="loginMessage"
+      ></div>
+
+
+      <p class="login-info">
+        L'accès étudiant sera configuré progressivement.
+      </p>
+
+
+      <a
+        href="index.html"
+        class="back-home"
+      >
+        ← Retour à l'accueil
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- ==============================
+       FOOTER
+       ============================== -->
+
+  <footer>
+
+    <p>
+      SEG UNDA — Sciences Économiques et de Gestion
+    </p>
+
+    <div class="signature">
+
+      <span class="michael">
+        MICHAEL
+      </span>
+
+      <small>
+        Étudiant
+      </small>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ==============================
+       FIREBASE
+       ============================== -->
+
+  <script type="module">
+
+    import { initializeApp }
+      from
+      "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+    import {
+      getAuth,
+      GoogleAuthProvider,
+      signInWithPopup
+    }
+      from
+      "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+    const firebaseConfig = {
+
+      apiKey:
+        "AIzaSyC4ejbTOO1G3XbwDJ5KYH6-CiYcdQqr68k",
+
+      authDomain:
+        "seg-unda.firebaseapp.com",
+
+      projectId:
+        "seg-unda",
+
+      storageBucket:
+        "seg-unda.firebasestorage.app",
+
+      messagingSenderId:
+        "1076997262231",
+
+      appId:
+        "1:1076997262231:web:31b640fa8fd5991e8612d2"
+
+    };
+
+
+    const app =
+      initializeApp(firebaseConfig);
+
+    const auth =
+      getAuth(app);
+
+    const provider =
+      new GoogleAuthProvider();
+
+
+    const googleBtn =
+      document.getElementById("googleBtn");
+
+    const loginMessage =
+      document.getElementById("loginMessage");
+
+
+    /* ==============================
+       CONNEXION GOOGLE
+       ============================== */
+
+    googleBtn.addEventListener(
+      "click",
+      async () => {
+
+        loginMessage.textContent =
+          "Connexion à Google...";
+
+        try {
+
+          const result =
+            await signInWithPopup(
+              auth,
+              provider
+            );
+
+          const user =
+            result.user;
+
+          loginMessage.textContent =
+            "Bienvenue " +
+            (user.displayName || user.email) +
+            " !";
+
+        } catch (error) {
+
+          console.error(error);
+
+          loginMessage.textContent =
+            "La connexion Google n'a pas pu être effectuée.";
+
+        }
+
+      }
+    );
+
+
+    /* ==============================
+       AFFICHER / MASQUER MOT DE PASSE
+       ============================== */
+
+    function togglePassword() {
+
+      const password =
+        document.getElementById("password");
+
+      const button =
+        document.querySelector(".show-password");
+
+
+      if (
+        password.type === "password"
+      ) {
+
+        password.type = "text";
+
+        button.textContent =
+          "Masquer";
+
+      } else {
+
+        password.type = "password";
+
+        button.textContent =
+          "Afficher";
+
+      }
+
+    }
+
+
+    window.togglePassword =
+      togglePassword;
+
+
+    /* ==============================
+       FORMULAIRE E-MAIL
+       ============================== */
+
+    document
+      .getElementById("loginForm")
+      .addEventListener(
+        "submit",
+        (event) => {
+
+          event.preventDefault();
+
+          loginMessage.textContent =
+            "La connexion par e-mail sera configurée prochainement.";
+
+        }
+      );
+
+  </script>
+
+</body>
+
+</html>
