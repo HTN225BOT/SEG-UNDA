@@ -1,1 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: Arial, sans-serif;
+    background: #07130f;
+    color: white;
+    line-height: 1.6;
+}
+
+/* HEADER */
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 7%;
+    background: #091812;
+    border-bottom: 1px solid #19352a;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #55d88a;
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    border: 1px solid #55d88a;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    background: #55d88a;
+    color: #07130f;
+}
+
+/* PAGE */
+
+.course-page {
+    width: 86%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 0;
+}
+
+/* HERO */
+
+.course-hero {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.course-label {
+    color: #55d88a;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.course-hero h1 {
+    font-size: 46px;
+    margin-bottom: 18px;
+}
+
+.course-hero p {
+    max-width: 750px;
+    margin: auto;
+    color: #b7c5be;
+    font-size: 17px;
+}
+
+/* CHAPITRES */
+
+.chapters {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.chapter-card {
+    display: block;
+    padding: 30px;
+    background: #0d1f17;
+    border: 1px solid #19352a;
+    border-radius: 18px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.chapter-card:hover {
+    transform: translateY(-5px);
+    border-color: #55d88a;
+}
+
+.chapter-number {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #55d88a;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.chapter-card h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.chapter-card p {
+    color: #b7c5be;
+    margin-bottom: 25px;
+}
+
+.chapter-link {
+    color: #55d88a;
+    font-weight: bold;
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+    .course-header {
+        padding: 20px 5%;
+    }
+
+    .course-page {
+        width: 90%;
+        padding: 50px 0;
+    }
+
+    .course-hero h1 {
+        font-size: 36px;
+    }
+
+    .chapters {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .course-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .course-hero h1 {
+        font-size: 31px;
+    }
+
+    .course-hero p {
+        font-size: 15px;
+    }
+
+    .chapter-card {
+        padding: 25px;
+    }
+}
