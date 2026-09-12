@@ -1,6 +1,6 @@
-const express = require(“express”);
-const cors = require(“cors”);
-const OpenAI = require(“openai”);
+const express = require("express");
+const cors = require("cors");
+const OpenAI = require("openai");
 
 const app = express();
 
@@ -11,14 +11,14 @@ const client = new OpenAI({
 apiKey: process.env.OPENAI_API_KEY
 });
 
-app.get(”/”, (req, res) => {
+app.get("/", (req, res) => {
 res.json({
-status: “online”,
-message: “SEG UNDA AI est connecté.”
+status: "online",
+message: "SEG UNDA AI est connecté."
 });
 });
 
-app.post(”/chat”, async (req, res) => {
+app.post("/chat", async (req, res) => {
 
 try {
     const message = req.body.message;
