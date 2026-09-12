@@ -1,1 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #222222;
+    line-height: 1.8;
+}
+
+/* ==============================
+   HEADER
+   ============================== */
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 7%;
+
+    background: #07130f;
+    border-bottom: 1px solid #19352a;
+}
+
+.logo {
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #55d88a;
+}
+
+.back-button {
+    color: #ffffff;
+    text-decoration: none;
+
+    border: 1px solid #55d88a;
+    padding: 9px 16px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    background: #55d88a;
+    color: #07130f;
+}
+
+/* ==============================
+   CONTENU PRINCIPAL
+   ============================== */
+
+.course-page {
+    width: 90%;
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 60px 0 80px;
+}
+
+/* ==============================
+   INTRODUCTION
+   ============================== */
+
+.course-hero {
+    text-align: center;
+
+    padding-bottom: 50px;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.course-label {
+    color: #159447;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.course-hero h1 {
+    color: #111111;
+
+    font-size: 42px;
+
+    margin-bottom: 20px;
+}
+
+.course-hero p {
+    color: #666666;
+
+    max-width: 700px;
+
+    margin: auto;
+
+    font-size: 17px;
+}
+
+/* ==============================
+   EXERCICES
+   ============================== */
+
+.exercise-list {
+    margin-top: 50px;
+}
+
+.exercise-card {
+    margin-bottom: 45px;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #d9eee1;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.exercise-number {
+    display: inline-block;
+
+    color: #159447;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.exercise-card h2 {
+    color: #111111;
+
+    font-size: 27px;
+
+    margin-bottom: 18px;
+}
+
+.exercise-card p {
+    color: #333333;
+
+    font-size: 17px;
+
+    margin-bottom: 16px;
+}
+
+.exercise-card ul {
+    margin: 20px 0 25px 25px;
+}
+
+.exercise-card li {
+    color: #333333;
+
+    font-size: 16px;
+
+    margin-bottom: 10px;
+}
+
+/* ==============================
+   TABLEAUX
+   ============================== */
+
+.table-container {
+    overflow-x: auto;
+
+    margin: 25px 0;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: #ffffff;
+}
+
+th,
+td {
+    padding: 14px 16px;
+
+    border: 1px solid #d9eee1;
+
+    text-align: center;
+}
+
+th {
+    background: #f4faf6;
+
+    color: #159447;
+
+    font-weight: bold;
+}
+
+td {
+    color: #333333;
+}
+
+/* ==============================
+   FORMULES
+   ============================== */
+
+.formula {
+    margin: 25px 0;
+
+    padding: 20px 25px;
+
+    background: #f4faf6;
+
+    border-left: 4px solid #55d88a;
+
+    border-radius: 6px;
+
+    text-align: center;
+
+    color: #111111;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+/* ==============================
+   CORRECTIONS
+   ============================== */
+
+.answer {
+    margin-top: 30px;
+
+    padding: 25px;
+
+    background: #f4faf6;
+
+    border-left: 4px solid #55d88a;
+
+    border-radius: 8px;
+}
+
+.answer h3 {
+    color: #159447;
+
+    font-size: 21px;
+
+    margin-bottom: 18px;
+}
+
+.answer p {
+    margin-bottom: 12px;
+
+    color: #333333;
+}
+
+.answer p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==============================
+   MESSAGE FINAL
+   ============================== */
+
+.final-message {
+    margin-top: 60px;
+
+    padding: 30px;
+
+    background: #f4faf6;
+
+    border: 1px solid #d9eee1;
+
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.final-message h2 {
+    color: #159447;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+.final-message p {
+    color: #555555;
+
+    max-width: 700px;
+
+    margin: auto;
+
+    font-size: 17px;
+}
+
+/* ==============================
+   VERSION MOBILE
+   ============================== */
+
+@media (max-width: 700px) {
+
+    .course-header {
+        padding: 18px 5%;
+    }
+
+    .course-page {
+        width: 90%;
+
+        padding: 45px 0 60px;
+    }
+
+    .course-hero h1 {
+        font-size: 34px;
+    }
+
+    .course-hero p {
+        font-size: 16px;
+    }
+
+    .exercise-card {
+        padding: 22px;
+    }
+
+    .exercise-card h2 {
+        font-size: 23px;
+    }
+
+    .exercise-card p {
+        font-size: 16px;
+    }
+
+    .formula {
+        padding: 18px;
+        font-size: 18px;
+    }
+
+    .answer {
+        padding: 20px;
+    }
+
+    .final-message {
+        padding: 22px;
+    }
+
+    th,
+    td {
+        padding: 11px 10px;
+    }
+}
