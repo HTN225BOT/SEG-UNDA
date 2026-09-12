@@ -1,1 +1,473 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Chapitre 02 — Les besoins et les choix économiques | SEG UNDA
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <!-- ==============================
+         HEADER
+         ============================== -->
+
+    <header class="course-header">
+
+        <a
+            href="../microeconomie.html"
+            class="logo"
+        >
+            SEG <span>UNDA</span>
+        </a>
+
+        <a
+            href="../microeconomie-cours.html"
+            class="back-button"
+        >
+            ← Retour aux chapitres
+        </a>
+
+    </header>
+
+
+    <!-- ==============================
+         CONTENU PRINCIPAL
+         ============================== -->
+
+    <main class="course-page">
+
+
+        <!-- ==============================
+             INTRODUCTION
+             ============================== -->
+
+        <section class="course-hero">
+
+            <p class="course-label">
+                LICENCE 1 — MICROÉCONOMIE
+            </p>
+
+            <h1>
+                Chapitre 02
+            </h1>
+
+            <h2>
+                Les besoins et les choix économiques
+            </h2>
+
+            <p>
+                Comprendre les besoins humains, les ressources
+                limitées et les choix que les agents économiques
+                doivent effectuer.
+            </p>
+
+        </section>
+
+
+        <!-- ==============================
+             COURS
+             ============================== -->
+
+        <article class="course-content">
+
+
+            <!-- LEÇON 01 -->
+
+            <section class="lesson">
+
+                <span class="lesson-number">
+                    01
+                </span>
+
+                <h2>
+                    Qu'est-ce qu'un besoin ?
+                </h2>
+
+                <p>
+                    Un besoin correspond à un sentiment de manque
+                    qu'une personne cherche à satisfaire.
+                </p>
+
+                <p>
+                    Les besoins peuvent concerner la nourriture,
+                    le logement, les vêtements, les déplacements,
+                    l'éducation ou encore les loisirs.
+                </p>
+
+                <p>
+                    En économie, l'étude des besoins permet de
+                    comprendre pourquoi les individus cherchent
+                    à utiliser des biens et des services.
+                </p>
+
+            </section>
+
+
+            <!-- LEÇON 02 -->
+
+            <section class="lesson">
+
+                <span class="lesson-number">
+                    02
+                </span>
+
+                <h2>
+                    Les besoins primaires et secondaires
+                </h2>
+
+                <p>
+                    On distingue généralement plusieurs catégories
+                    de besoins selon leur importance pour la vie
+                    quotidienne.
+                </p>
+
+                <ul>
+
+                    <li>
+                        <strong>
+                            Les besoins primaires :
+                        </strong>
+
+                        ils sont indispensables à la vie,
+                        comme se nourrir, boire ou se loger.
+                    </li>
+
+                    <li>
+                        <strong>
+                            Les besoins secondaires :
+                        </strong>
+
+                        ils améliorent le confort et le bien-être,
+                        comme les loisirs, certains équipements
+                        ou les voyages.
+                    </li>
+
+                </ul>
+
+                <p>
+                    Cette distinction peut varier selon les personnes,
+                    les sociétés et les conditions de vie.
+                </p>
+
+            </section>
+
+
+            <!-- LEÇON 03 -->
+
+            <section class="lesson">
+
+                <span class="lesson-number">
+                    03
+                </span>
+
+                <h2>
+                    Les ressources économiques
+                </h2>
+
+                <p>
+                    Pour satisfaire leurs besoins, les individus
+                    utilisent différentes ressources.
+                </p>
+
+                <p>
+                    Parmi ces ressources, on peut citer le revenu,
+                    le temps, le travail, les matières premières,
+                    les équipements et les ressources naturelles.
+                </p>
+
+                <p>
+                    Cependant, ces ressources sont limitées.
+                    Un individu ne dispose pas d'un revenu,
+                    d'un temps ou de ressources illimités.
+                </p>
+
+                <div class="example">
+
+                    <strong>
+                        Exemple :
+                    </strong>
+
+                    <p>
+                        Un étudiant dispose d'un temps limité dans
+                        la journée. Il doit répartir ce temps entre
+                        les cours, les révisions, le repos et les
+                        activités personnelles.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- LEÇON 04 -->
+
+            <section class="lesson">
+
+                <span class="lesson-number">
+                    04
+                </span>
+
+                <h2>
+                    La rareté
+                </h2>
+
+                <p>
+                    La rareté signifie que les ressources disponibles
+                    sont insuffisantes pour satisfaire simultanément
+                    tous les besoins et toutes les envies.
+                </p>
+
+                <p>
+                    La rareté constitue l'un des problèmes fondamentaux
+                    étudiés par la science économique.
+                </p>
+
+                <p>
+                    Elle oblige les individus, les entreprises et
+                    les pouvoirs publics à effectuer des choix.
+                </p>
+
+            </section>
+
+
+            <!-- LEÇON 05 -->
+
+            <section class="lesson">
+
+                <span class="lesson-number">
+                    05
+                </span>
+
+                <h2>
+                    Pourquoi devons-nous faire des choix ?
+                </h2>
+
+                <p>
+                    Les besoins sont nombreux tandis que les ressources
+                    disponibles sont limitées. Il est donc impossible
+                    de satisfaire toutes les possibilités en même temps.
+                </p>
+
+                <p>
+                    L'agent économique doit alors déterminer quelles
+                    utilisations de ses ressources sont prioritaires.
+                </p>
+
+                <div class="example">
+
+                    <strong>
+                        Exemple :
+                    </strong>
+
+                    <p>
+                        Une personne possède 20 000 FCFA. Elle souhaite
+                        acheter des vêtements, manger au restaurant et
+                        acheter un livre. Si elle ne dispose pas de
+                        suffisamment d'argent pour tout acheter, elle
+                        devra établir des priorités.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- LEÇON 06 -->
+
+            <section class="lesson">
+
+                <span class="lesson-number">
+                    06
+                </span>
+
+                <h2>
+                    Les choix des agents économiques
+                </h2>
+
+                <p>
+                    Tous les agents économiques sont confrontés
+                    à des choix.
+                </p>
+
+                <ul>
+
+                    <li>
+                        <strong>
+                            Les ménages
+                        </strong>
+
+                        choisissent comment utiliser leur revenu.
+                    </li>
+
+                    <li>
+                        <strong>
+                            Les entreprises
+                        </strong>
+
+                        choisissent quoi produire et comment utiliser
+                        leurs ressources.
+                    </li>
+
+                    <li>
+                        <strong>
+                            L'État
+                        </strong>
+
+                        doit déterminer comment utiliser les ressources
+                        publiques disponibles.
+                    </li>
+
+                </ul>
+
+                <p>
+                    Ces choix dépendent notamment des objectifs,
+                    des ressources disponibles et des contraintes
+                    auxquelles chaque agent est confronté.
+                </p>
+
+            </section>
+
+
+            <!-- LEÇON 07 -->
+
+            <section class="lesson">
+
+                <span class="lesson-number">
+                    07
+                </span>
+
+                <h2>
+                    La contrainte économique
+                </h2>
+
+                <p>
+                    Une contrainte économique représente une limite
+                    qui empêche un agent de réaliser toutes les
+                    possibilités qu'il souhaite.
+                </p>
+
+                <p>
+                    Pour un consommateur, le revenu constitue par
+                    exemple une contrainte importante.
+                </p>
+
+                <p>
+                    Pour une entreprise, les coûts de production,
+                    les ressources disponibles et les capacités
+                    techniques peuvent également constituer
+                    des contraintes.
+                </p>
+
+            </section>
+
+
+            <!-- LEÇON 08 -->
+
+            <section class="lesson">
+
+                <span class="lesson-number">
+                    08
+                </span>
+
+                <h2>
+                    Le choix et la renonciation
+                </h2>
+
+                <p>
+                    Choisir une possibilité signifie généralement
+                    renoncer à une ou plusieurs autres possibilités.
+                </p>
+
+                <p>
+                    Cette idée est essentielle en microéconomie :
+                    lorsqu'une ressource est utilisée pour une
+                    activité, elle ne peut généralement pas être
+                    utilisée simultanément pour une autre activité.
+                </p>
+
+                <div class="example">
+
+                    <strong>
+                        Exemple :
+                    </strong>
+
+                    <p>
+                        Un étudiant dispose de trois heures libres.
+                        S'il utilise ces trois heures pour réviser,
+                        il ne pourra pas les utiliser simultanément
+                        pour travailler ou pratiquer une activité
+                        de loisir.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================
+                 À RETENIR
+                 ============================== -->
+
+            <section class="summary">
+
+                <h2>
+                    🎯 À retenir
+                </h2>
+
+                <ul>
+
+                    <li>
+                        Un besoin correspond à un sentiment de manque
+                        que l'on cherche à satisfaire.
+                    </li>
+
+                    <li>
+                        Les besoins sont nombreux et peuvent être
+                        primaires ou secondaires.
+                    </li>
+
+                    <li>
+                        Les ressources économiques sont limitées.
+                    </li>
+
+                    <li>
+                        La rareté oblige les agents économiques
+                        à effectuer des choix.
+                    </li>
+
+                    <li>
+                        Toute décision économique est prise sous
+                        certaines contraintes.
+                    </li>
+
+                    <li>
+                        Choisir une possibilité implique généralement
+                        de renoncer à une autre.
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+        </article>
+
+    </main>
+
+</body>
+
+</html>
