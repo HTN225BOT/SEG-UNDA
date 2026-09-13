@@ -1,1 +1,1321 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SEG UNDA AI</title>
+
+    <link
+        rel="stylesheet"
+        href="ia.css"
+    >
+
+    <!-- MARKDOWN -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/marked/marked.min.js">
+    </script>
+
+
+    <!-- PROTECTION DU HTML -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js">
+    </script>
+
+
+    <!-- MATHJAX -->
+    <script>
+
+        window.MathJax = {
+
+            tex: {
+
+                inlineMath: [
+                    ["$", "$"],
+                    ["\\(", "\\)"]
+                ],
+
+                displayMath: [
+                    ["$$", "$$"],
+                    ["\\[", "\\]"]
+                ]
+
+            },
+
+            svg: {
+                fontCache: "global"
+            }
+
+        };
+
+    </script>
+
+
+    <script
+        async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header class="ai-header">
+
+        <a
+            href="../index.html"
+            class="logo"
+        >
+
+            <span class="logo-seg">
+                SEG
+            </span>
+
+            <span class="logo-unda">
+                UNDA
+            </span>
+
+            <span class="logo-ai">
+                AI
+            </span>
+
+        </a>
+
+
+        <a
+            href="../index.html"
+            class="back-button"
+        >
+            Retour
+        </a>
+
+    </header>
+
+
+
+    <main class="ai-page">
+
+
+        <!-- ==================================================
+             ACCUEIL SEG UNDA AI
+        ================================================== -->
+
+        <section
+            class="ai-welcome"
+            id="welcome"
+        >
+
+
+            <div class="ai-orb">
+
+                <div class="orb-core">
+                    ✦
+                </div>
+
+            </div>
+
+
+            <p class="ai-eyebrow">
+                ASSISTANT INTELLIGENT
+            </p>
+
+
+            <h1>
+                SEG UNDA <span>AI</span>
+            </h1>
+
+
+            <p class="ai-intro">
+                Posez-moi une question, demandez une explication,
+                résolvez un exercice ou discutez simplement avec moi.
+            </p>
+
+
+            <!-- SUGGESTIONS -->
+
+            <div class="idea-grid">
+
+
+                <button
+                    type="button"
+                    class="idea-card"
+                    data-message="Explique-moi la microéconomie simplement."
+                >
+
+                    <div class="idea-icon">
+                        📚
+                    </div>
+
+                    <div class="idea-content">
+
+                        <strong>
+                            Apprendre
+                        </strong>
+
+                        <small>
+                            Explique-moi une notion
+                        </small>
+
+                    </div>
+
+                    <span class="idea-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    type="button"
+                    class="idea-card"
+                    data-message="Aide-moi à résoudre un exercice de mathématiques."
+                >
+
+                    <div class="idea-icon">
+                        🧮
+                    </div>
+
+                    <div class="idea-content">
+
+                        <strong>
+                            Résoudre
+                        </strong>
+
+                        <small>
+                            Aide-moi avec un calcul
+                        </small>
+
+                    </div>
+
+                    <span class="idea-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    type="button"
+                    class="idea-card"
+                    data-message="Donne-moi des informations sur un sujet intéressant."
+                >
+
+                    <div class="idea-icon">
+                        💡
+                    </div>
+
+                    <div class="idea-content">
+
+                        <strong>
+                            Découvrir
+                        </strong>
+
+                        <small>
+                            Parlons d'un sujet
+                        </small>
+
+                    </div>
+
+                    <span class="idea-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    type="button"
+                    class="idea-card"
+                    data-message="Aide-moi à apprendre quelque chose de nouveau aujourd'hui."
+                >
+
+                    <div class="idea-icon">
+                        ✨
+                    </div>
+
+                    <div class="idea-content">
+
+                        <strong>
+                            Explorer
+                        </strong>
+
+                        <small>
+                            Apprenons ensemble
+                        </small>
+
+                    </div>
+
+                    <span class="idea-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             CONVERSATION
+        ================================================== -->
+
+        <section
+            class="chat-section"
+            id="chatSection"
+        >
+
+
+            <div
+                class="chat-messages"
+                id="chatMessages"
+            >
+
+
+                <!-- MESSAGE INITIAL -->
+
+                <article class="message ai-message">
+
+                    <div class="message-header">
+
+
+                        <div class="ai-avatar">
+                            ✦
+                        </div>
+
+
+                        <div>
+
+                            <div class="message-name">
+                                SEG UNDA AI
+                            </div>
+
+                            <div class="message-status">
+                                Assistant
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="message-content">
+
+                        <p>
+                            Bonjour 👋 Je suis SEG UNDA AI.
+                            Pose-moi une question et nous pouvons commencer.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 ZONE DE SAISIE
+            ================================================== -->
+
+            <div class="chat-input-area">
+
+
+                <div class="input-wrapper">
+
+
+                    <textarea
+                        id="messageInput"
+                        rows="1"
+                        placeholder="Écrivez votre message..."
+                        autocomplete="off"
+                    ></textarea>
+
+
+                    <button
+                        type="button"
+                        id="sendButton"
+                        class="send-button"
+                        aria-label="Envoyer le message"
+                    >
+                        ↑
+                    </button>
+
+
+                </div>
+
+
+                <p class="ai-disclaimer">
+                    SEG UNDA AI peut faire des erreurs.
+                    Vérifiez les informations importantes.
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script type="module">
+
+        /*
+         * ==================================================
+         * FIREBASE
+         * ==================================================
+         */
+
+        import {
+            auth,
+            db
+        } from "./firebase.js";
+
+        import {
+            onAuthStateChanged
+        } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+        import {
+            collection,
+            addDoc,
+            doc,
+            setDoc,
+            serverTimestamp
+        } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+        /*
+         * Utilisateur actuellement connecté
+         */
+
+        let currentUser = null;
+
+
+        /*
+         * Conversation actuellement ouverte
+         */
+
+        let currentConversationId = null;
+
+
+
+        /*
+         * Surveiller la connexion Firebase
+         */
+
+        onAuthStateChanged(auth, user => {
+
+            currentUser = user;
+
+            if (user) {
+
+                console.log(
+                    "Utilisateur connecté :",
+                    user.uid
+                );
+
+            } else {
+
+                console.log(
+                    "Aucun utilisateur connecté."
+                );
+
+            }
+
+        });
+
+
+
+        /*
+         * ==================================================
+         * BACKEND SEG UNDA AI
+         * ==================================================
+         */
+
+        const BACKEND_URL =
+            "https://seg-unda-ai.onrender.com";
+
+
+        const welcome =
+            document.getElementById("welcome");
+
+
+        const chatSection =
+            document.getElementById("chatSection");
+
+
+        const chatMessages =
+            document.getElementById("chatMessages");
+
+
+        const messageInput =
+            document.getElementById("messageInput");
+
+
+        const sendButton =
+            document.getElementById("sendButton");
+
+
+        const suggestionButtons =
+            document.querySelectorAll(".idea-card");
+
+
+
+        /*
+         * ==================================================
+         * ENTRER DANS LA CONVERSATION
+         * ==================================================
+         */
+
+        function openChat() {
+
+            welcome.classList.add("hidden");
+
+            chatSection.classList.add("active");
+
+            messageInput.focus();
+
+        }
+
+
+
+        /*
+         * ==================================================
+         * CRÉER UNE NOUVELLE CONVERSATION
+         * ==================================================
+         */
+
+        async function createConversation(firstMessage) {
+
+            if (!currentUser) {
+
+                return null;
+
+            }
+
+
+            try {
+
+                const conversationsRef =
+                    collection(
+                        db,
+                        "users",
+                        currentUser.uid,
+                        "conversations"
+                    );
+
+
+                const conversationRef =
+                    await addDoc(
+                        conversationsRef,
+                        {
+
+                            title:
+                                firstMessage.length > 60
+                                    ? firstMessage.substring(0, 60) + "..."
+                                    : firstMessage,
+
+                            createdAt:
+                                serverTimestamp(),
+
+                            updatedAt:
+                                serverTimestamp()
+
+                        }
+                    );
+
+
+                currentConversationId =
+                    conversationRef.id;
+
+
+                console.log(
+                    "Conversation créée :",
+                    currentConversationId
+                );
+
+
+                return currentConversationId;
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Erreur création conversation :",
+                    error
+                );
+
+
+                return null;
+
+            }
+
+        }
+
+
+
+        /*
+         * ==================================================
+         * ENREGISTRER UN MESSAGE
+         * ==================================================
+         */
+
+        async function saveMessage(
+            message,
+            role
+        ) {
+
+            if (
+                !currentUser ||
+                !currentConversationId
+            ) {
+
+                return;
+
+            }
+
+
+            try {
+
+                const messagesRef =
+                    collection(
+                        db,
+                        "users",
+                        currentUser.uid,
+                        "conversations",
+                        currentConversationId,
+                        "messages"
+                    );
+
+
+                await addDoc(
+                    messagesRef,
+                    {
+
+                        role:
+                            role,
+
+                        content:
+                            message,
+
+                        createdAt:
+                            serverTimestamp()
+
+                    }
+                );
+
+
+                /*
+                 * Mettre à jour la date
+                 * de dernière activité
+                 */
+
+                const conversationRef =
+                    doc(
+                        db,
+                        "users",
+                        currentUser.uid,
+                        "conversations",
+                        currentConversationId
+                    );
+
+
+                await setDoc(
+                    conversationRef,
+                    {
+
+                        updatedAt:
+                            serverTimestamp()
+
+                    },
+
+                    {
+                        merge: true
+                    }
+
+                );
+
+
+                console.log(
+                    "Message sauvegardé."
+                );
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Erreur sauvegarde message :",
+                    error
+                );
+
+            }
+
+        }
+
+
+
+        /*
+         * ==================================================
+         * AJOUTER UN MESSAGE UTILISATEUR
+         * ==================================================
+         */
+
+        function addUserMessage(message) {
+
+            const article =
+                document.createElement("article");
+
+
+            article.className =
+                "message user-message";
+
+
+            article.innerHTML = `
+
+                <div class="message-header">
+
+                    <div class="message-name">
+                        Vous
+                    </div>
+
+                </div>
+
+                <div class="message-content"></div>
+
+            `;
+
+
+            const content =
+                article.querySelector(
+                    ".message-content"
+                );
+
+
+            content.textContent =
+                message;
+
+
+            chatMessages.appendChild(article);
+
+
+            scrollToBottom();
+
+        }
+
+
+
+        /*
+         * ==================================================
+         * AJOUTER UNE RÉPONSE DE SEG UNDA AI
+         *
+         * Markdown + MathJax
+         * ==================================================
+         */
+
+        function addAIMessage(message) {
+
+            const article =
+                document.createElement("article");
+
+
+            article.className =
+                "message ai-message";
+
+
+            article.innerHTML = `
+
+                <div class="message-header">
+
+                    <div class="ai-avatar">
+                        ✦
+                    </div>
+
+                    <div>
+
+                        <div class="message-name">
+                            SEG UNDA AI
+                        </div>
+
+                        <div class="message-status">
+                            Assistant
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="message-content"></div>
+
+            `;
+
+
+            const content =
+                article.querySelector(
+                    ".message-content"
+                );
+
+
+            /*
+             * Transformer Markdown en HTML
+             */
+
+            const markdownHTML =
+                marked.parse(message);
+
+
+            /*
+             * Nettoyer le HTML
+             */
+
+            content.innerHTML =
+                DOMPurify.sanitize(
+                    markdownHTML
+                );
+
+
+            chatMessages.appendChild(article);
+
+
+            scrollToBottom();
+
+
+            /*
+             * Transformer les formules
+             * LaTeX en vraies formules
+             */
+
+            if (window.MathJax) {
+
+                MathJax.typesetPromise([content])
+                    .catch(error => {
+
+                        console.error(
+                            "Erreur MathJax :",
+                            error
+                        );
+
+                    });
+
+            }
+
+        }
+
+
+
+        /*
+         * ==================================================
+         * ANIMATION "RÉFLEXION"
+         * ==================================================
+         */
+
+        function addTypingMessage() {
+
+            const article =
+                document.createElement("article");
+
+
+            article.className =
+                "message ai-message loading-message";
+
+
+            article.id =
+                "typingMessage";
+
+
+            article.innerHTML = `
+
+                <div class="message-header">
+
+                    <div class="ai-avatar">
+                        ✦
+                    </div>
+
+                    <div>
+
+                        <div class="message-name">
+                            SEG UNDA AI
+                        </div>
+
+                        <div class="message-status">
+                            Réflexion...
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="typing">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            `;
+
+
+            chatMessages.appendChild(article);
+
+
+            scrollToBottom();
+
+        }
+
+
+
+        /*
+         * ==================================================
+         * SUPPRIMER L'ANIMATION
+         * ==================================================
+         */
+
+        function removeTypingMessage() {
+
+            const typingMessage =
+                document.getElementById(
+                    "typingMessage"
+                );
+
+
+            if (typingMessage) {
+
+                typingMessage.remove();
+
+            }
+
+        }
+
+
+
+        /*
+         * ==================================================
+         * DESCENDRE AUTOMATIQUEMENT
+         * ==================================================
+         */
+
+        function scrollToBottom() {
+
+            chatMessages.scrollTop =
+                chatMessages.scrollHeight;
+
+        }
+
+
+
+        /*
+         * ==================================================
+         * ENVOYER LE MESSAGE
+         * ==================================================
+         */
+
+        async function sendMessage() {
+
+            const message =
+                messageInput.value.trim();
+
+
+            if (!message) {
+
+                return;
+
+            }
+
+
+            /*
+             * Entrer dans le chat
+             */
+
+            openChat();
+
+
+            /*
+             * Afficher immédiatement
+             * le message utilisateur
+             */
+
+            addUserMessage(message);
+
+
+            /*
+             * Vider la zone de saisie
+             */
+
+            messageInput.value =
+                "";
+
+
+            messageInput.style.height =
+                "auto";
+
+
+            sendButton.disabled =
+                true;
+
+
+            /*
+             * Afficher la réflexion
+             */
+
+            addTypingMessage();
+
+
+
+            /*
+             * ==================================================
+             * SAUVEGARDE FIREBASE
+             * ==================================================
+             */
+
+            if (currentUser) {
+
+                /*
+                 * Si aucune conversation n'existe encore,
+                 * on en crée une.
+                 */
+
+                if (!currentConversationId) {
+
+                    await createConversation(
+                        message
+                    );
+
+                }
+
+
+                /*
+                 * Sauvegarder le message utilisateur
+                 */
+
+                await saveMessage(
+                    message,
+                    "user"
+                );
+
+            }
+
+
+
+            /*
+             * ==================================================
+             * CONTACTER LE BACKEND
+             * ==================================================
+             */
+
+            try {
+
+                const response =
+                    await fetch(
+                        `${BACKEND_URL}/chat`,
+                        {
+
+                            method: "POST",
+
+                            headers: {
+
+                                "Content-Type":
+                                    "application/json"
+
+                            },
+
+                            body: JSON.stringify({
+
+                                message:
+                                    message
+
+                            })
+
+                        }
+                    );
+
+
+
+                const data =
+                    await response.json();
+
+
+
+                removeTypingMessage();
+
+
+
+                /*
+                 * Gestion des erreurs
+                 */
+
+                if (!response.ok) {
+
+                    const errorMessage =
+                        data.error ||
+                        "Une erreur est survenue.";
+
+
+                    addAIMessage(
+                        errorMessage
+                    );
+
+
+                    /*
+                     * Même les erreurs importantes
+                     * peuvent être enregistrées.
+                     */
+
+                    if (
+                        currentUser &&
+                        currentConversationId
+                    ) {
+
+                        await saveMessage(
+                            errorMessage,
+                            "assistant"
+                        );
+
+                    }
+
+
+                    return;
+
+                }
+
+
+
+                /*
+                 * Réponse normale de l'IA
+                 */
+
+                const reply =
+                    data.reply ||
+                    "Je n'ai pas reçu de réponse.";
+
+
+                addAIMessage(
+                    reply
+                );
+
+
+
+                /*
+                 * Sauvegarder la réponse
+                 * de SEG UNDA AI
+                 */
+
+                if (
+                    currentUser &&
+                    currentConversationId
+                ) {
+
+                    await saveMessage(
+                        reply,
+                        "assistant"
+                    );
+
+                }
+
+
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Erreur SEG UNDA AI :",
+                    error
+                );
+
+
+                removeTypingMessage();
+
+
+                const errorMessage =
+                    "Impossible de contacter SEG UNDA AI pour le moment.";
+
+
+                addAIMessage(
+                    errorMessage
+                );
+
+
+                /*
+                 * Sauvegarder également
+                 * l'erreur dans la conversation
+                 */
+
+                if (
+                    currentUser &&
+                    currentConversationId
+                ) {
+
+                    await saveMessage(
+                        errorMessage,
+                        "assistant"
+                    );
+
+                }
+
+            }
+
+            finally {
+
+                sendButton.disabled =
+                    false;
+
+
+                messageInput.focus();
+
+            }
+
+        }
+
+
+
+        /*
+         * ==================================================
+         * SUGGESTIONS
+         * ==================================================
+         */
+
+        suggestionButtons.forEach(
+
+            button => {
+
+                button.addEventListener(
+
+                    "click",
+
+                    () => {
+
+                        const message =
+                            button.dataset.message;
+
+
+                        messageInput.value =
+                            message;
+
+
+                        sendMessage();
+
+                    }
+
+                );
+
+            }
+
+        );
+
+
+
+        /*
+         * ==================================================
+         * BOUTON ENVOYER
+         * ==================================================
+         */
+
+        sendButton.addEventListener(
+
+            "click",
+
+            sendMessage
+
+        );
+
+
+
+        /*
+         * ==================================================
+         * ENTRÉE CLAVIER
+         *
+         * Entrée = envoyer
+         * Shift + Entrée = nouvelle ligne
+         * ==================================================
+         */
+
+        messageInput.addEventListener(
+
+            "keydown",
+
+            event => {
+
+
+                if (
+
+                    event.key === "Enter" &&
+                    !event.shiftKey
+
+                ) {
+
+
+                    event.preventDefault();
+
+
+                    sendMessage();
+
+                }
+
+            }
+
+        );
+
+
+
+        /*
+         * ==================================================
+         * AGRANDISSEMENT AUTOMATIQUE
+         * ==================================================
+         */
+
+        messageInput.addEventListener(
+
+            "input",
+
+            () => {
+
+
+                messageInput.style.height =
+                    "auto";
+
+
+                messageInput.style.height =
+
+                    Math.min(
+
+                        messageInput.scrollHeight,
+
+                        140
+
+                    ) + "px";
+
+            }
+
+        );
+
+    </script>
+
+
+</body>
+
+</html>
