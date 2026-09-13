@@ -35,7 +35,7 @@ app.get("/test-ai", async (req, res) => {
 
         const response = await ai.models.generateContent({
 
-            model: "gemini-3.8-flash",
+            model: "gemini-2.5-flash",
 
             contents: "Réponds simplement : SEG UNDA AI fonctionne !"
 
@@ -83,7 +83,7 @@ app.post("/chat", async (req, res) => {
 
         const response = await ai.models.generateContent({
 
-            model: "gemini-3.8-flash",
+          model: "gemini-2.5-flash",  
 
             config: {
                 systemInstruction: `
