@@ -184,6 +184,10 @@
 
     .forgot {
       display: block;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      font: inherit;
       text-align: right;
       margin-top: -8px;
       margin-bottom: 20px;
@@ -278,9 +282,21 @@
       font-size: 14px;
     }
 
-    .register a {
+    .register button {
+      padding: 0;
+      border: 0;
+      background: transparent;
       color: #69e8ff;
+      font: inherit;
       cursor: pointer;
+      text-decoration: underline;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible {
+      outline: 3px solid #69e8ff;
+      outline-offset: 3px;
     }
 
     .info {
