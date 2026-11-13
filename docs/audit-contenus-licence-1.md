@@ -1,29 +1,30 @@
-# Audit des contenus pédagogiques — Licence 1
+# État des contenus pédagogiques — Licence 1
 
 **Dépôt :** HTN225BOT/SEG-UNDA  
-**Branche de travail :** cleanup-foundation  
-**Référence comparée :** main  
-**Date :** 13 novembre 2026
+**Branche de travail :** `cleanup-foundation`  
+**Date de mise à jour :** 13 novembre 2026
 
 ## Synthèse
 
-L'audit confirme qu'il ne faut pas reconstruire Microéconomie L1 : un ensemble pédagogique existe déjà sur `main` et ses ressources sont présentes dans la branche de travail. La nouvelle navigation de `cleanup-foundation` propose désormais des liens vers ces ressources historiques.
+La branche contient désormais six matières dans le catalogue pédagogique dynamique : Économie générale, Comptabilité générale, Mathématiques, Introduction à la gestion, Droit et Informatique.
 
-Deux autres matières ont des contenus pilotes dans le catalogue dynamique. Les autres matières affichées dans la liste L1 n'ont pas été retrouvées sous forme de cours détaillés dans les fichiers examinés.
+Ces contenus sont présentés comme des **programmes non officiels de l'UNDA**. Ils constituent des supports pédagogiques complémentaires élaborés pour l'apprentissage. Ils ne doivent pas être interprétés comme une reproduction certifiée du syllabus officiel de l'université.
+
+La Microéconomie dispose par ailleurs de ressources historiques distinctes, conservées dans le dépôt et reliées depuis la nouvelle page matière.
 
 ## État par matière
 
-| Matière | État constaté | Source / action |
+| Matière | État constaté | Fichier ou ressource |
 |---|---|---|
-| Économie générale | Contenu pilote : 3 chapitres, 2 exercices corrigés, 3 questions de quiz | `js/course-data.js` sur `cleanup-foundation`. À valider pédagogiquement. |
-| Comptabilité générale | Contenu pilote : 3 chapitres, 2 exercices corrigés, 3 questions de quiz | `js/course-data.js` sur `cleanup-foundation`. À valider pédagogiquement. |
-| Mathématiques | Matière listée, cours détaillé non retrouvé dans les fichiers audités | À rechercher dans les supports de l'équipe avant rédaction. |
-| Introduction à la gestion | Matière listée, cours détaillé non retrouvé dans les fichiers audités | À rechercher dans les supports de l'équipe avant rédaction. |
-| Droit | Matière listée, cours détaillé non retrouvé dans les fichiers audités | À rechercher dans les supports de l'équipe avant rédaction. |
-| Informatique | Matière listée, cours détaillé non retrouvé dans les fichiers audités | À rechercher dans les supports de l'équipe avant rédaction. |
-| Microéconomie | Ressources existantes : page matière, cours en 6 chapitres, exercices corrigés, fiche de révision et feuilles de style | Ressources historiques de `main`, conservées sur la branche de travail et reliées depuis la nouvelle page matière. |
+| Économie générale | Contenu pédagogique présent dans le catalogue | `js/course-data.js` |
+| Comptabilité générale | Contenu pédagogique présent dans le catalogue | `js/course-data.js` |
+| Mathématiques | Contenu pédagogique présent dans le catalogue | `js/course-data.js` |
+| Introduction à la gestion | Contenu pédagogique présent dans le catalogue | `js/course-data.js` |
+| Droit | Contenu pédagogique général présent dans le catalogue | `js/course-data.js` |
+| Informatique | Contenu pédagogique général présent dans le catalogue | `js/course-data.js` |
+| Microéconomie | Ressources existantes : cours en six chapitres, exercices et fiche de révision | Fichiers historiques dans `cours/matieres/` |
 
-## Détail de Microéconomie déjà disponible
+## Ressources de Microéconomie
 
 - `cours/matieres/microeconomie.html` : accueil de la matière.
 - `cours/matieres/microeconomie-cours.html` : sommaire du cours.
@@ -32,17 +33,18 @@ Deux autres matières ont des contenus pilotes dans le catalogue dynamique. Les 
 - `cours/matieres/microeconomie-revision.html` : révision.
 - Feuilles de style dédiées dans `cours/matieres/`.
 
-La page dynamique reconnaît maintenant Microéconomie L1 et expose trois accès directs vers le cours, les exercices et les révisions. Les fichiers historiques n'ont pas été réécrits.
+La page matière dynamique propose des accès vers ces ressources historiques. Les fichiers historiques n'ont pas été réécrits dans le cadre de la création du catalogue.
 
 ## Limites et précautions
 
-- Cet audit porte sur les fichiers présents dans les arbres Git des branches consultées. Il ne prouve pas l'existence ou l'absence de supports hors dépôt (documents locaux, fichiers non suivis, plateforme pédagogique).
-- Les contenus pilotes d'Économie générale et de Comptabilité générale sont des propositions de démarrage, pas des syllabus officiellement validés par l'UNDA.
-- Aucune validation de rendu en navigateur n'est déclarée dans cet audit.
+- Cet état décrit les fichiers présents dans la branche consultée. Il ne couvre pas les éventuels supports externes ou documents qui ne sont pas présents dans le dépôt.
+- Aucun rapprochement exhaustif avec le syllabus officiel de l'UNDA n'a été effectué. Les contenus sont donc explicitement présentés comme non officiels.
+- Les notions de droit doivent être utilisées avec prudence et confrontées aux textes ivoiriens et communautaires applicables dans leur version en vigueur.
+- Aucune validation du rendu dans un navigateur n'est déclarée ici.
 
-## Ordre de travail recommandé
+## Prochaines vérifications techniques
 
-1. Vérifier le rendu et la navigation Microéconomie dans la nouvelle interface.
-2. Demander ou rechercher les supports/syllabus officiels de Mathématiques, Introduction à la gestion, Droit et Informatique.
-3. Développer ces matières à partir de ces références, en gardant une mention « provisoire » tant qu'elles ne sont pas validées.
-4. Faire relire les deux contenus pilotes déjà présents.
+1. Contrôler les liens entre les pages de niveaux, les matières et les ressources historiques.
+2. Vérifier les paramètres transmis dans les URL et la correspondance avec les clés du catalogue.
+3. Contrôler la structure des chapitres, exercices et quiz, notamment les réponses attendues.
+4. Effectuer ensuite un contrôle visuel dans un navigateur avant de considérer le parcours comme prêt à publier.
