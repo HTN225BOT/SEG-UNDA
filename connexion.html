@@ -445,12 +445,13 @@
         </div>
 
 
-        <a
+        <button
+          type="button"
           class="forgot"
           id="forgotPassword"
         >
           Mot de passe oublié ?
-        </a>
+        </button>
 
 
         <button
@@ -510,6 +511,8 @@
       <div
         class="message"
         id="loginMessage"
+        role="status"
+        aria-live="polite"
       ></div>
 
 
@@ -517,9 +520,9 @@
 
         Pas encore de compte ?
 
-        <a id="registerLink">
+        <button type="button" id="registerLink">
           Créer un compte
-        </a>
+        </button>
 
       </div>
 
