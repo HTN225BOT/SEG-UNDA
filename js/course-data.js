@@ -102,5 +102,72 @@ export const courseCatalog = {
       {q:"Pour f(x) = 3x − 2, quelle est l'image de 5 ?",options:["13","15","17"],correct:0,why:"f(5) = 3 × 5 − 2 = 15 − 2 = 13."}
     ]
   }
+  ,
+  "L1|Introduction à la gestion": {
+    status: "contenu pédagogique provisoire — trame générale à valider et adapter au syllabus officiel de l'UNDA",
+    intro: "Ce module d'introduction propose des repères sur les organisations, leurs objectifs, les principales fonctions de gestion et la prise de décision. Il s'agit d'une base pédagogique générale, non d'un programme officiel.",
+    chapters: [
+      {
+        title: "Organisation, entreprise et finalités",
+        objectives: [
+          "Définir une organisation et distinguer plusieurs types d'organisations.",
+          "Identifier des finalités économiques et sociales possibles.",
+          "Comprendre le rôle des parties prenantes."
+        ],
+        sections: [
+          ["Qu'est-ce qu'une organisation ?", "Une organisation est un ensemble de personnes et de ressources coordonnées afin d'atteindre un ou plusieurs objectifs. Une entreprise, une administration publique ou une association peuvent être étudiées comme des organisations, même si leurs finalités et leurs modes de fonctionnement diffèrent."],
+          ["L'entreprise et ses finalités", "Une entreprise combine des ressources humaines, matérielles, financières et informationnelles pour produire des biens ou des services. Elle peut rechercher la pérennité, la rentabilité, le développement, la satisfaction des clients ou d'autres objectifs selon son contexte."],
+          ["Les parties prenantes", "Les parties prenantes sont les personnes ou groupes concernés par l'activité de l'organisation : dirigeants, salariés, clients, fournisseurs, investisseurs, administrations ou collectivités, par exemple. Leurs attentes peuvent être différentes et parfois entrer en tension."],
+          ["L'environnement", "L'organisation évolue dans un environnement économique, juridique, technologique, social et concurrentiel. Observer cet environnement aide à identifier des opportunités, des contraintes et des risques."]
+        ],
+        summary: "La gestion étudie la manière de coordonner des ressources et des personnes pour atteindre des objectifs. Une organisation doit aussi tenir compte de ses parties prenantes et de son environnement."
+      },
+      {
+        title: "Les principales fonctions de gestion",
+        objectives: [
+          "Identifier quelques grandes fonctions présentes dans une organisation.",
+          "Comprendre la complémentarité entre les fonctions.",
+          "Relier une activité concrète à une fonction de gestion."
+        ],
+        sections: [
+          ["La fonction commerciale", "La fonction commerciale s'intéresse notamment aux clients, à l'offre, à la vente et à la relation avec le marché. Elle travaille avec les autres fonctions afin d'adapter l'activité de l'organisation à la demande."],
+          ["La fonction financière et comptable", "Cette fonction contribue au suivi des ressources financières, des coûts, des résultats et des besoins de financement. Les outils comptables et financiers servent à produire une information utile à la décision, selon les règles applicables."],
+          ["La fonction ressources humaines", "Elle concerne notamment le recrutement, l'organisation du travail, le développement des compétences et la gestion des relations de travail. Les pratiques concrètes dépendent de la taille, du secteur et du cadre juridique de l'organisation."],
+          ["Production, opérations et systèmes d'information", "Les activités de production ou de prestation organisent les moyens nécessaires pour délivrer un bien ou un service. Les systèmes d'information collectent, traitent et diffusent des informations utiles au fonctionnement et à la coordination."],
+          ["Coordination", "Ces fonctions ne travaillent pas de manière isolée. Une décision commerciale peut avoir des conséquences sur la production, la trésorerie et les ressources humaines. La gestion cherche donc aussi à coordonner les activités."]
+        ],
+        summary: "Les fonctions de gestion sont complémentaires : vendre, produire, financer, gérer les personnes et l'information sont des activités liées qui nécessitent coordination et arbitrages."
+      },
+      {
+        title: "Décision, planification et contrôle",
+        objectives: [
+          "Décrire les étapes générales d'une prise de décision.",
+          "Distinguer planification, action et contrôle.",
+          "Utiliser des indicateurs simples pour comparer un résultat à un objectif."
+        ],
+        sections: [
+          ["Le processus de décision", "Une démarche simple consiste à identifier une situation, définir un objectif, recueillir des informations, comparer plusieurs options, choisir une action puis observer les résultats. Dans la réalité, l'information peut être incomplète et les décisions sont prises sous contraintes."],
+          ["Planifier", "La planification consiste à préciser des objectifs, des actions, des ressources et un horizon temporel. Elle peut aider à coordonner les efforts, mais elle doit pouvoir être ajustée lorsque l'environnement ou les informations changent."],
+          ["Contrôler et corriger", "Le contrôle de gestion au sens général de suivi consiste à comparer des résultats observés à des objectifs ou à des prévisions. Un écart ne signifie pas automatiquement un échec : il faut en rechercher les causes avant de décider d'une correction."],
+          ["Exemple d'indicateur", "Si une activité vise 100 ventes et en réalise 90, l'écart est de −10 ventes. Pour interpréter cet écart, il faut examiner le contexte : disponibilité des produits, demande, prix, concurrence ou autres facteurs. Un indicateur informe la décision mais ne la remplace pas."]
+        ],
+        summary: "Gérer implique de décider avec des informations imparfaites, de planifier l'action puis de suivre les résultats. Les écarts doivent être interprétés avant de choisir une mesure corrective."
+      }
+    ],
+    exercises: [
+      {question:"Une organisation souhaite augmenter le nombre de clients servis sans dépasser ses ressources actuelles. Quelles informations devrait-elle analyser avant de décider d'une action ?",answer:"Elle devrait notamment analyser la demande, ses capacités opérationnelles, ses coûts, ses ressources disponibles et les contraintes de son environnement.",explanation:"Une décision de gestion ne repose pas sur un seul chiffre. Il faut relier l'objectif aux ressources, aux contraintes et aux conséquences possibles pour les différentes fonctions."},
+      {question:"Classez les activités suivantes dans la fonction principalement concernée : recruter un employé, suivre la trésorerie, organiser la fabrication d'un produit.",answer:"Recrutement : ressources humaines ; trésorerie : fonction financière ; fabrication : production ou opérations.",explanation:"Les fonctions sont complémentaires. Une activité peut concerner plusieurs services, mais cette classification indique la responsabilité principale dans une organisation simplifiée."},
+      {question:"Un service prévoyait 200 dossiers traités dans le mois et en traite 180. Quel est l'écart par rapport à l'objectif ?",answer:"Un écart de −20 dossiers, soit −10 % par rapport à l'objectif.",explanation:"180 − 200 = −20. Le taux d'écart est −20 / 200 = −0,10, soit −10 %. Il faut ensuite analyser les causes avant de décider d'une correction."},
+      {question:"Pourquoi les attentes d'un client et celles d'un investisseur peuvent-elles parfois conduire à des arbitrages différents ?",answer:"Parce que les parties prenantes peuvent poursuivre des attentes différentes, par exemple qualité et prix pour un client, rentabilité et risque pour un investisseur.",explanation:"La gestion consiste souvent à arbitrer entre plusieurs objectifs et contraintes plutôt qu'à optimiser une seule variable."},
+      {question:"Donnez une étape qui devrait suivre l'observation d'un écart important entre un résultat et un objectif.",answer:"Rechercher et analyser les causes de l'écart avant de choisir une action corrective.",explanation:"Un écart est une information. Agir immédiatement sans comprendre ses causes peut conduire à une correction inadaptée."}
+    ],
+    quiz: [
+      {q:"Une organisation peut être définie comme :",options:["Un ensemble de ressources et de personnes coordonnées vers des objectifs","Uniquement une entreprise privée","Uniquement un service public"],correct:0,why:"La notion d'organisation est plus large que celle d'entreprise et concerne différents types de structures."},
+      {q:"Quelle activité relève principalement de la fonction ressources humaines ?",options:["Recruter et développer les compétences","Établir le prix d'équilibre d'un marché","Produire automatiquement les états financiers"],correct:0,why:"La gestion des personnes, du recrutement et des compétences fait partie des activités généralement associées aux ressources humaines."},
+      {q:"Quel ordre décrit le mieux une démarche générale de décision ?",options:["Choisir sans information, puis fixer un objectif","Identifier la situation, comparer des options, choisir et suivre les résultats","Contrôler uniquement après plusieurs années"],correct:1,why:"Une décision structurée relie l'analyse, le choix, l'action et le suivi, même si les situations réelles sont souvent plus complexes."},
+      {q:"Un résultat de 90 pour un objectif de 100 correspond à :",options:["Un écart de +10","Un écart de −10","Aucun écart"],correct:1,why:"90 − 100 = −10. L'interprétation de cet écart nécessite ensuite d'en analyser les causes."},
+      {q:"Pourquoi coordonner les différentes fonctions d'une organisation ?",options:["Parce qu'elles n'ont aucune influence les unes sur les autres","Parce qu'une décision dans une fonction peut avoir des conséquences sur les autres","Uniquement pour réduire le nombre de salariés"],correct:1,why:"Les activités commerciales, financières, opérationnelles et humaines sont liées et doivent être cohérentes avec les objectifs de l'organisation."}
+    ]
+  }
 
 };
