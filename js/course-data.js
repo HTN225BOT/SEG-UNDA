@@ -35,5 +35,72 @@ export const courseCatalog = {
     exercises:[{question:"Une entreprise possède du matériel, des stocks et de l'argent en banque. Dans quelle partie du bilan ces éléments sont-ils présentés ?",answer:"À l'actif du bilan.",explanation:"Ce sont des éléments de patrimoine contrôlés par l'entreprise et présentés parmi ses actifs."},{question:"Une entreprise réalise 2 500 000 F CFA de produits et 1 900 000 F CFA de charges. Quel est son résultat ?",answer:"600 000 F CFA de bénéfice.",explanation:"Résultat = 2 500 000 − 1 900 000 = 600 000 F CFA. Les produits sont supérieurs aux charges."}],
     quiz:[{q:"Quel est le rôle principal de la comptabilité ?",options:["Enregistrer et communiquer une information financière","Fixer tous les prix du marché","Remplacer les décisions du dirigeant"],correct:0,why:"La comptabilité fournit une information structurée sur le patrimoine et l'activité."},{q:"Où présente-t-on généralement les dettes envers les fournisseurs dans le bilan ?",options:["À l'actif","Au passif","Dans les produits"],correct:1,why:"Les dettes sont des ressources de financement et figurent au passif."},{q:"Comment calcule-t-on le résultat comptable simplifié ?",options:["Charges moins actif","Produits moins charges","Passif moins trésorerie"],correct:1,why:"Le résultat est égal aux produits diminués des charges sur la période."}]
   }
+  ,
+  "L1|Mathématiques": {
+    status: "contenu pédagogique provisoire — trame générale à confronter au syllabus officiel de l'UNDA",
+    intro: "Ce parcours de remise à niveau présente des outils mathématiques utiles aux études d'économie et de gestion : calcul numérique, pourcentages, algèbre, équations et fonctions simples. L'ordre et le niveau des notions devront être adaptés au programme officiel.",
+    chapters: [
+      {
+        title: "Calcul numérique, fractions et pourcentages",
+        objectives: [
+          "Effectuer les opérations usuelles en respectant les priorités.",
+          "Simplifier et calculer avec des fractions.",
+          "Calculer une proportion, un taux d'évolution et une valeur après variation."
+        ],
+        sections: [
+          ["Priorités opératoires", "Dans une expression, on traite d'abord les parenthèses, puis les puissances, ensuite les multiplications et divisions, et enfin les additions et soustractions. À priorité égale, on calcule de gauche à droite. Exemple : 8 + 3 × 4 = 8 + 12 = 20, et non 44."],
+          ["Fractions", "Une fraction a/b représente le quotient de a par b, avec b différent de zéro. Pour additionner deux fractions, on les met au même dénominateur. Pour multiplier, on multiplie les numérateurs entre eux et les dénominateurs entre eux. Exemple : 1/2 + 1/3 = 3/6 + 2/6 = 5/6."],
+          ["Proportions et pourcentages", "Un taux de t % correspond au coefficient t/100. Calculer 15 % de 80 000 F CFA revient à calculer 0,15 × 80 000 = 12 000 F CFA. Une hausse de t % multiplie la valeur initiale par 1 + t/100 ; une baisse de t % la multiplie par 1 − t/100."],
+          ["Taux d'évolution", "Le taux d'évolution entre une valeur initiale V0 et une valeur finale V1 est (V1 − V0) / V0, à condition que V0 soit non nul. On multiplie le résultat par 100 pour l'exprimer en pourcentage. Une hausse de 10 % suivie d'une baisse de 10 % ne ramène pas à la valeur initiale : les coefficients multiplicateurs se multiplient."]
+        ],
+        summary: "Maîtriser les fractions, les priorités et les pourcentages est indispensable pour lire des données économiques et effectuer des calculs fiables. Pour une variation, utiliser un coefficient multiplicateur permet d'éviter les erreurs."
+      },
+      {
+        title: "Calcul littéral, équations et inéquations",
+        objectives: [
+          "Réduire et développer des expressions algébriques simples.",
+          "Résoudre une équation du premier degré.",
+          "Résoudre une inéquation simple et interpréter son ensemble de solutions."
+        ],
+        sections: [
+          ["Expressions littérales", "Une lettre représente une valeur inconnue ou variable. Réduire une expression consiste à regrouper les termes semblables : 3x + 2x − 4 = 5x − 4. Développer consiste à utiliser la distributivité : a(b + c) = ab + ac. Ainsi, 3(x + 2) = 3x + 6."],
+          ["Équation du premier degré", "Une équation est une égalité contenant une inconnue. Pour résoudre 3x + 5 = 20, on soustrait 5 aux deux membres : 3x = 15, puis on divise par 3 : x = 5. Une transformation correcte conserve l'égalité."],
+          ["Vérification d'une solution", "Après avoir trouvé une valeur, on peut la remplacer dans l'équation de départ. Pour x = 5 dans 3x + 5 = 20, on obtient 3 × 5 + 5 = 20 : l'égalité est vérifiée."],
+          ["Inéquations", "Une inéquation utilise les signes <, >, ≤ ou ≥. On peut ajouter ou soustraire un même nombre aux deux membres. On peut multiplier ou diviser par un nombre positif sans changer le sens du signe. En multipliant ou divisant par un nombre négatif, il faut inverser le sens de l'inégalité. Exemple : −2x < 6 équivaut à x > −3."]
+        ],
+        summary: "Le calcul littéral permet de représenter une situation avec des variables. Pour résoudre une équation, on isole l'inconnue en conservant l'égalité ; pour une inéquation, attention au changement de sens lors d'une division par un nombre négatif."
+      },
+      {
+        title: "Fonctions et applications économiques simples",
+        objectives: [
+          "Comprendre la notion de fonction et lire une image.",
+          "Calculer l'image et rechercher un antécédent dans des exemples simples.",
+          "Étudier une fonction affine et interpréter ses paramètres."
+        ],
+        sections: [
+          ["Notion de fonction", "Une fonction associe à chaque valeur x de son domaine une unique valeur notée f(x). La valeur f(x) est l'image de x. Si f(x) = 2x + 3, alors l'image de 4 est f(4) = 2 × 4 + 3 = 11."],
+          ["Antécédent", "Un antécédent d'une valeur y est une valeur x telle que f(x) = y. Pour f(x) = 2x + 3, chercher l'antécédent de 11 revient à résoudre 2x + 3 = 11, donc x = 4."],
+          ["Fonction affine", "Une fonction affine s'écrit f(x) = ax + b. Le nombre a est le coefficient directeur et décrit la variation de la fonction lorsque x augmente d'une unité ; b est l'ordonnée à l'origine. Si a est positif, la fonction est croissante ; si a est négatif, elle est décroissante ; si a est nul, elle est constante."],
+          ["Exemple d'application", "Une entreprise supporte un coût fixe de 50 000 F CFA et un coût variable de 1 200 F CFA par unité produite. Dans ce modèle simplifié, le coût total pour q unités est C(q) = 1 200q + 50 000. Pour q = 20, C(20) = 74 000 F CFA. Ce modèle suppose que le coût variable unitaire reste constant."],
+          ["Lire un tableau de valeurs", "Un tableau de valeurs associe à plusieurs valeurs de x les valeurs correspondantes de f(x). Il permet de repérer des évolutions et de représenter graphiquement une fonction. Il faut toujours vérifier les unités et le contexte des variables."]
+        ],
+        summary: "Une fonction modélise une relation entre deux grandeurs. Les fonctions affines sont particulièrement utiles pour représenter des situations simples de coûts, recettes ou quantités, sous réserve des hypothèses du modèle."
+      }
+    ],
+    exercises: [
+      {question:"Calculez 8 + 3 × (12 − 4) ÷ 2.",answer:"20.",explanation:"On calcule d'abord la parenthèse : 12 − 4 = 8. Puis la multiplication et la division de gauche à droite : 3 × 8 ÷ 2 = 24 ÷ 2 = 12. Enfin 8 + 12 = 20."},
+      {question:"Un article coûte 40 000 F CFA. Son prix augmente de 15 %. Quel est son nouveau prix ?",answer:"46 000 F CFA.",explanation:"La hausse vaut 0,15 × 40 000 = 6 000 F CFA. Le nouveau prix est 40 000 + 6 000 = 46 000 F CFA, soit 40 000 × 1,15."},
+      {question:"Résolvez l'équation 4x − 7 = 21.",answer:"x = 7.",explanation:"On ajoute 7 aux deux membres : 4x = 28. On divise par 4 : x = 7. Vérification : 4 × 7 − 7 = 21."},
+      {question:"Résolvez l'inéquation −3x ≤ 12.",answer:"x ≥ −4.",explanation:"On divise les deux membres par −3. Comme le diviseur est négatif, on inverse le sens du signe : x ≥ −4."},
+      {question:"Une entreprise a un coût total C(q) = 1 500q + 30 000, en F CFA. Calculez le coût pour 12 unités et expliquez le rôle de 30 000.",answer:"C(12) = 48 000 F CFA. Le montant 30 000 F CFA représente le coût fixe du modèle.",explanation:"C(12) = 1 500 × 12 + 30 000 = 18 000 + 30 000 = 48 000 F CFA. Le terme constant ne dépend pas de la quantité q : il représente ici le coût fixe supposé."}
+    ],
+    quiz: [
+      {q:"Combien vaut 20 % de 50 000 F CFA ?",options:["5 000 F CFA","10 000 F CFA","20 000 F CFA"],correct:1,why:"20 % = 0,20 et 0,20 × 50 000 = 10 000 F CFA."},
+      {q:"Quelle est la forme développée de 4(x + 3) ?",options:["4x + 3","4x + 12","x + 12"],correct:1,why:"La distributivité donne 4 × x + 4 × 3 = 4x + 12."},
+      {q:"Quelle est la solution de 2x + 6 = 14 ?",options:["x = 3","x = 4","x = 10"],correct:1,why:"On soustrait 6 : 2x = 8, puis on divise par 2 : x = 4."},
+      {q:"Lorsqu'on divise les deux membres d'une inéquation par un nombre négatif :",options:["Le signe reste toujours identique","Le signe de l'inégalité s'inverse","L'inéquation n'a plus de solution"],correct:1,why:"La division par un nombre négatif inverse le sens de l'inégalité."},
+      {q:"Pour f(x) = 3x − 2, quelle est l'image de 5 ?",options:["13","15","17"],correct:0,why:"f(5) = 3 × 5 − 2 = 15 − 2 = 13."}
+    ]
+  }
 
 };
