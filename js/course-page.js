@@ -10,7 +10,7 @@ $("subjectLevel").textContent=({L1:"LICENCE 1",L2:"LICENCE 2",L3:"LICENCE 3"}[le
 document.title=subject+" | SEG UNDA";
 $("backToLevel").href=level?"../"+level.toLowerCase()+".html":"index.html";
 const root=$("courseContent");
-if(!course && level==="L1" && subject.normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase()==="microeconomie"){
+if(!course && level==="L1" && subject.toLowerCase().replace("é","e")==="microeconomie"){
  root.innerHTML='<section class="content-empty"><h2>Microéconomie — ressources déjà disponibles</h2><p>Le dépôt contient déjà un cours structuré en six chapitres, une série d’exercices corrigés et une fiche de révision. Ces ressources existantes sont conservées et accessibles ci-dessous.</p><div class="legacy-course-links"><a class="hero-btn" href="matieres/microeconomie-cours.html">📖 Consulter les 6 chapitres</a><a class="hero-btn" href="matieres/microeconomie-exercices.html">📝 Faire les exercices corrigés</a><a class="hero-btn" href="matieres/microeconomie-revision.html">🎯 Ouvrir la fiche de révision</a></div><p class="course-note">Les ressources historiques ont été réintégrées à la navigation de la nouvelle plateforme sans recopier ni écraser leur contenu.</p></section>';
 } else if(!course){
  root.innerHTML='<section class="content-empty"><h2>Contenu en préparation</h2><p>Cette matière est identifiée dans le catalogue. Son cours détaillé sera ajouté après validation du programme et des supports pédagogiques.</p><p class="course-note">Aucun contenu officiel n’est présenté ici pour le moment.</p><a href="../ia/index.html" class="hero-btn">Demander à SEG UNDA AI</a></section>';
