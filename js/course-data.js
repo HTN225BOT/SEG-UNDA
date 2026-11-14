@@ -233,4 +233,64 @@ export const courseCatalog = {
     ]
   }
 
+,
+  "L2|Macroéconomie": {
+    status: "Programmes non officiels de l'UNDA",
+    intro: "Ce cours présente les principaux outils d'analyse de l'économie dans son ensemble : production, croissance, emploi, prix et politiques économiques. Il constitue une proposition pédagogique non officielle à confronter aux enseignements et aux textes de référence de l'établissement.",
+    chapters: [
+      {
+        title: "Comptabilité nationale et mesure de l'activité",
+        objectives: ["Définir les principaux agrégats macroéconomiques.", "Distinguer PIB nominal et PIB réel.", "Comprendre les limites du PIB comme indicateur de bien-être."],
+        sections: [
+          ["La comptabilité nationale", "La comptabilité nationale décrit de manière cohérente l'activité économique d'un pays sur une période donnée. Elle organise les opérations des agents économiques et permet de calculer des agrégats tels que la production, le revenu et la dépense."],
+          ["Le produit intérieur brut", "Le produit intérieur brut (PIB) mesure la valeur des biens et services finaux produits sur le territoire économique pendant une période. Par l'approche de la dépense, dans une présentation simplifiée, PIB = C + I + G + (X − M), où C est la consommation finale, I l'investissement, G la dépense publique en biens et services, X les exportations et M les importations."],
+          ["PIB nominal, PIB réel et limites", "Le PIB nominal est évalué aux prix courants. Le PIB réel cherche à mesurer l'évolution des volumes en neutralisant les variations de prix, selon une méthode de prix constants ou de chaînage. Le PIB ne renseigne pas à lui seul sur la répartition des revenus, le travail non rémunéré, les dommages environnementaux ou toutes les dimensions du bien-être."]
+        ],
+        summary: "La comptabilité nationale mesure l'activité à travers des agrégats. Le PIB est central, mais il ne constitue pas une mesure complète du bien-être."
+      },
+      {
+        title: "Croissance économique et fluctuations",
+        objectives: ["Définir la croissance économique.", "Calculer un taux de croissance.", "Distinguer tendance de long terme et fluctuations conjoncturelles."],
+        sections: [
+          ["Définition et calcul", "La croissance économique désigne l'augmentation durable de la production réelle d'une économie. Le taux de croissance entre deux périodes se calcule par : ((PIB réel de la période t − PIB réel de la période t−1) / PIB réel de la période t−1) × 100."],
+          ["Sources de la croissance", "La croissance peut provenir de l'accumulation du capital, de l'augmentation de la quantité de travail, de l'amélioration des qualifications, du progrès technique et d'une meilleure organisation de la production. La contribution de chaque facteur dépend du contexte et de l'horizon étudié."],
+          ["Cycles et conjoncture", "L'activité économique connaît des fluctuations autour de sa tendance de long terme. Une expansion correspond à une phase de hausse de l'activité ; un ralentissement traduit une progression moins rapide ; une récession désigne une contraction significative de l'activité selon les critères retenus. Les chocs de demande ou d'offre peuvent contribuer à ces mouvements."]
+        ],
+        summary: "La croissance se mesure à partir du PIB réel. Ses sources sont multiples et l'activité fluctue à court terme autour de tendances de long terme."
+      },
+      {
+        title: "Emploi, chômage et inflation",
+        objectives: ["Définir le chômage au sens statistique.", "Calculer un taux de chômage et un taux d'inflation.", "Distinguer hausse du niveau des prix et hausse ponctuelle d'un prix."],
+        sections: [
+          ["Population active et chômage", "La population active regroupe les personnes en emploi et les personnes au chômage selon une définition statistique donnée. Dans la définition internationale usuelle, une personne au chômage est sans emploi, disponible pour travailler et à la recherche active d'un emploi, sous réserve des critères opérationnels de l'enquête. Le taux de chômage est le nombre de chômeurs rapporté à la population active, multiplié par 100."],
+          ["Inflation et indice des prix", "L'inflation est une hausse générale et durable du niveau des prix. Elle est souvent suivie au moyen d'un indice des prix à la consommation. Le taux d'inflation entre deux périodes correspond à la variation en pourcentage de cet indice. Une hausse isolée du prix d'un produit ne suffit pas à caractériser l'inflation."],
+          ["Relations macroéconomiques", "Le chômage, l'inflation et l'activité peuvent évoluer ensemble ou en sens opposé selon les chocs et les politiques économiques. Les relations observées ne sont pas des lois mécaniques : elles dépendent notamment des anticipations, des institutions, de la structure productive et de la période étudiée."]
+        ],
+        summary: "Les indicateurs d'emploi et de prix reposent sur des définitions statistiques précises. Leur interprétation doit tenir compte du contexte économique."
+      },
+      {
+        title: "Demande globale et politiques économiques",
+        objectives: ["Identifier les composantes de la demande globale.", "Distinguer politique budgétaire et politique monétaire.", "Expliquer les mécanismes et les limites d'une relance."],
+        sections: [
+          ["Demande globale", "Dans une présentation simplifiée, la demande globale rassemble la consommation, l'investissement, les dépenses publiques en biens et services et la demande extérieure nette. Ses composantes réagissent notamment au revenu, aux taux d'intérêt, aux anticipations, aux conditions de crédit et à la situation des partenaires commerciaux."],
+          ["Politique budgétaire", "La politique budgétaire agit sur les recettes et les dépenses publiques. Une hausse des dépenses ou une baisse des prélèvements peut soutenir la demande à court terme, tandis qu'une réduction des dépenses ou une hausse des prélèvements peut la freiner. Les effets dépendent de la conjoncture, du financement, des importations, des délais et de la soutenabilité des finances publiques."],
+          ["Politique monétaire", "La politique monétaire est conduite par la banque centrale et agit notamment sur les conditions de financement et les taux d'intérêt. Une orientation accommodante peut faciliter le crédit et soutenir la demande ; une orientation restrictive vise notamment à réduire les tensions inflationnistes. La transmission dépend du système financier et des anticipations."]
+        ],
+        summary: "Les politiques budgétaire et monétaire influencent l'activité par des canaux différents. Leur efficacité dépend des circonstances et comporte des arbitrages."
+      }
+    ],
+    exercises: [
+      {question:"Dans une économie, C = 500, I = 120, G = 180, X = 90 et M = 70 (en milliards de F CFA). Calculez le PIB par l'approche de la dépense.",answer:"820 milliards de F CFA.",explanation:"PIB = C + I + G + (X − M) = 500 + 120 + 180 + (90 − 70) = 820."},
+      {question:"Le PIB réel passe de 10 000 à 10 400 milliards de F CFA. Calculez le taux de croissance.",answer:"4 %.",explanation:"((10 400 − 10 000) / 10 000) × 100 = 4 %."},
+      {question:"Une économie compte 1 200 000 personnes en emploi et 100 000 personnes au chômage. Calculez la population active et le taux de chômage.",answer:"Population active : 1 300 000 personnes. Taux de chômage : environ 7,69 %.",explanation:"Population active = emploi + chômage = 1 300 000. Taux = 100 000 / 1 300 000 × 100 ≈ 7,69 %."},
+      {question:"Un indice des prix passe de 125 à 130. Calculez le taux d'inflation sur la période.",answer:"4 %.",explanation:"((130 − 125) / 125) × 100 = 4 %."}
+    ],
+    quiz: [
+      {q:"Le PIB mesure principalement :",options:["La valeur de la production finale sur un territoire pendant une période","La richesse détenue par chaque ménage","Uniquement les exportations"],correct:0,why:"Le PIB mesure la production finale réalisée sur le territoire pendant une période donnée."},
+      {q:"Pour mesurer l'évolution des volumes produits, on privilégie :",options:["Le PIB nominal","Le PIB réel","Le montant des importations seul"],correct:1,why:"Le PIB réel neutralise les variations de prix selon la méthode de calcul retenue."},
+      {q:"Le taux de chômage rapporte le nombre de chômeurs :",options:["À la population totale","À la population active","Aux seules personnes en emploi"],correct:1,why:"Le dénominateur du taux de chômage est la population active."},
+      {q:"L'inflation correspond à :",options:["La hausse générale et durable du niveau des prix","La hausse du prix d'un seul produit","La baisse de tous les salaires"],correct:0,why:"L'inflation concerne le niveau général des prix, et non un prix isolé."},
+      {q:"Une politique budgétaire agit principalement sur :",options:["Les dépenses et recettes publiques","La quantité de pluie","Le taux de change uniquement"],correct:0,why:"La politique budgétaire utilise les dépenses et les prélèvements publics."}
+    ]
+  }
 };
