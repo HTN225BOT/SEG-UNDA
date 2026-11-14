@@ -22,8 +22,9 @@
   };
   const style = document.createElement("style");
   style.textContent = `
-    .theme-control{position:relative;display:inline-flex;align-items:center;z-index:30;font-family:Arial,sans-serif}
-    .theme-toggle{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid var(--theme-accent,#00d9ff);border-radius:24px;background:var(--theme-control-bg,rgba(0,217,255,.09));color:var(--theme-text,#fff);font-weight:700;font-size:.88rem;cursor:pointer}
+    .theme-control{position:relative;display:inline-flex;align-items:center;z-index:30;font-family:Arial,sans-serif;margin-left:8px}
+    .theme-toggle{display:inline-flex;align-items:center;gap:5px;padding:6px 9px;border:1px solid var(--theme-border,rgba(124,92,255,.3));border-radius:18px;background:transparent;color:var(--theme-muted,var(--theme-text,#fff));font-weight:600;font-size:.76rem;line-height:1;cursor:pointer;opacity:.82;transition:opacity .2s ease,border-color .2s ease,background .2s ease}
+    .theme-toggle:hover,.theme-toggle[aria-expanded="true"]{opacity:1;background:var(--theme-control-bg,rgba(0,217,255,.09));border-color:var(--theme-accent,#00d9ff)}
     .theme-toggle:focus-visible,.theme-option:focus-visible{outline:3px solid var(--theme-accent,#00d9ff);outline-offset:3px}
     .theme-menu{position:absolute;top:calc(100% + 10px);right:0;display:none;min-width:190px;padding:8px;border:1px solid var(--theme-border,rgba(124,92,255,.3));border-radius:15px;background:var(--theme-menu-bg,#141830);box-shadow:0 14px 35px rgba(0,0,0,.28)}
     .theme-menu.open{display:grid;gap:5px}
@@ -72,7 +73,7 @@
     body[data-theme="gold"] .login-icon,body[data-theme="dark"] .login-icon,body[data-theme="gold"] .login-btn,body[data-theme="dark"] .login-btn,body[data-theme="gold"] .header-btn,body[data-theme="dark"] .header-btn,body[data-theme="gold"] .google-btn,body[data-theme="dark"] .google-btn{background:linear-gradient(135deg,var(--theme-accent-2),var(--theme-accent));border-color:var(--theme-border);color:#fff}
     body[data-theme="gold"] .login-card>p,body[data-theme="dark"] .login-card>p,body[data-theme="gold"] .register,body[data-theme="dark"] .register,body[data-theme="gold"] .field label,body[data-theme="dark"] .field label,body[data-theme="gold"] .info,body[data-theme="dark"] .info,body[data-theme="gold"] .back-home,body[data-theme="dark"] .back-home{color:var(--theme-muted)}
     body[data-theme="gold"] .field input,body[data-theme="dark"] .field input{background:var(--theme-bg);color:var(--theme-text);border-color:var(--theme-border)}
-    @media(max-width:768px){.theme-control{margin:4px}.theme-toggle{padding:8px 11px}.theme-menu{right:0}}
+    @media(max-width:768px){.theme-control{margin:2px}.theme-toggle{padding:5px 8px;font-size:.72rem;gap:4px}.theme-menu{right:0}}
   `;
   document.head.appendChild(style);
   const mount = () => {
