@@ -184,6 +184,10 @@
 
     .forgot {
       display: block;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      font: inherit;
       text-align: right;
       margin-top: -8px;
       margin-bottom: 20px;
@@ -278,9 +282,21 @@
       font-size: 14px;
     }
 
-    .register a {
+    .register button {
+      padding: 0;
+      border: 0;
+      background: transparent;
       color: #69e8ff;
+      font: inherit;
       cursor: pointer;
+      text-decoration: underline;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible {
+      outline: 3px solid #69e8ff;
+      outline-offset: 3px;
     }
 
     .info {
@@ -429,12 +445,13 @@
         </div>
 
 
-        <a
+        <button
+          type="button"
           class="forgot"
           id="forgotPassword"
         >
           Mot de passe oublié ?
-        </a>
+        </button>
 
 
         <button
@@ -494,6 +511,8 @@
       <div
         class="message"
         id="loginMessage"
+        role="status"
+        aria-live="polite"
       ></div>
 
 
@@ -501,9 +520,9 @@
 
         Pas encore de compte ?
 
-        <a id="registerLink">
+        <button type="button" id="registerLink">
           Créer un compte
-        </a>
+        </button>
 
       </div>
 
@@ -550,7 +569,8 @@
     import {
       getAuth,
       GoogleAuthProvider,
-      signInWithPopup,
+      signInWithRedirect,
+      getRedirectResult,
       signInWithEmailAndPassword,
       createUserWithEmailAndPassword,
       sendPasswordResetEmail,
@@ -798,47 +818,36 @@
        GOOGLE
        ============================== */
 
+    // Récupérer le résultat après le retour de Google.
+    // Le flux par redirection est plus adapté aux navigateurs mobiles.
+    try {
+      const redirectResult = await getRedirectResult(auth);
+
+      if (redirectResult && redirectResult.user) {
+        console.log(
+          "Google connecté :",
+          redirectResult.user.email
+        );
+        redirectToHome();
+      }
+    } catch (error) {
+      googleBtn.disabled = false;
+      showMessage(firebaseError(error));
+    }
+
+
     googleBtn.addEventListener(
       "click",
       async () => {
-
         googleBtn.disabled = true;
-
-        showMessage(
-          "Ouverture de Google..."
-        );
-
+        showMessage("Redirection vers Google...");
 
         try {
-
-          const result =
-            await signInWithPopup(
-              auth,
-              provider
-            );
-
-
-          if (result && result.user) {
-
-            console.log(
-              "Google connecté :",
-              result.user.email
-            );
-
-            redirectToHome();
-
-          }
-
+          await signInWithRedirect(auth, provider);
         } catch (error) {
-
           googleBtn.disabled = false;
-
-          showMessage(
-            firebaseError(error)
-          );
-
+          showMessage(firebaseError(error));
         }
-
       }
     );
 

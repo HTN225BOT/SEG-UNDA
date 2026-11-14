@@ -1,405 +1,79 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* SEG UNDA — shared styles */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#080b18;color:#fff;line-height:1.6}
+header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 7%;background:rgba(8,11,24,.96);border-bottom:1px solid rgba(124,92,255,.25);position:relative;z-index:10}
+.logo img{width:58px;height:58px;object-fit:contain;display:block}
+.brand-text{color:#fff;text-decoration:none;font-size:1.2rem;font-weight:700}.brand-text span{color:#00d9ff}
+nav{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}nav a{color:#dfe4f5;text-decoration:none;font-size:.95rem}nav a:hover,nav a.active{color:#00d9ff}
+.header-btn,.logout-btn{color:#fff;text-decoration:none;padding:10px 18px;border:1px solid rgba(0,217,255,.6);border-radius:30px;background:rgba(0,217,255,.08);font-weight:700;cursor:pointer}.auth-actions{display:flex;gap:10px;align-items:center}.logout-btn{border-color:rgba(255,255,255,.2)}
+.hero{min-height:78vh;display:flex;align-items:center;justify-content:space-between;gap:60px;padding:80px 7%;background:radial-gradient(circle at 80% 25%,rgba(124,92,255,.24),transparent 35%),radial-gradient(circle at 15% 80%,rgba(0,217,255,.12),transparent 35%)}.hero-content{max-width:680px}.hero-tag{display:inline-block;margin-bottom:18px;color:#00d9ff;font-size:.85rem;font-weight:700;letter-spacing:2px}.hero h1{font-size:3.6rem;line-height:1.1;margin-bottom:22px}.hero h1 span{color:#8c72ff}.hero p,.presentation p,.formations-header p{color:#aeb6d0}.hero p{margin-bottom:32px;font-size:1.08rem}.hero-btn,.licence-btn{display:inline-block;padding:14px 26px;border-radius:30px;background:linear-gradient(135deg,#7c5cff,#00d9ff);color:#fff;text-decoration:none;font-weight:700}.hero-card,.licence-card,.about-card{background:rgba(20,24,48,.78);border:1px solid rgba(124,92,255,.3);border-radius:22px;box-shadow:0 20px 50px rgba(0,0,0,.25)}.hero-card{width:330px;padding:38px 30px;text-align:center}.hero-card h2{color:#00d9ff;margin-bottom:12px}.presentation{text-align:center;padding:80px 7%}.presentation h2{font-size:2.2rem;margin-bottom:15px}.presentation h2 span{color:#00d9ff}.presentation p{max-width:700px;margin:auto}
+.formations-page{min-height:78vh;padding:70px 7%}.formations-header{text-align:center;margin-bottom:50px}.formations-header h1{font-size:2.6rem;margin-bottom:15px}.licence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;max-width:1100px;margin:auto}.licence-card{padding:30px;text-align:center}.licence-card h2{margin-bottom:15px}.licence-card p{color:#aeb6d0;margin-bottom:25px}
+.about-page{min-height:78vh;padding:70px 7%;background:radial-gradient(circle at 15% 20%,rgba(0,217,255,.1),transparent 30%)}.about-hero{max-width:850px;margin:0 auto 55px;text-align:center}.about-label{color:#00d9ff;font-weight:700;letter-spacing:3px;margin-bottom:12px}.about-hero h1{font-size:3rem;margin-bottom:20px}.about-hero p,.about-card p{color:#aeb6d0}.about-cards{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.about-card{padding:32px 25px;text-align:center}.about-icon{font-size:2rem;margin-bottom:15px}
+footer{margin-top:40px;padding:32px 7%;text-align:center;background:#060812;border-top:1px solid rgba(124,92,255,.2);color:#777f99}.signature{display:flex;flex-direction:column;align-items:center;margin-top:12px}.michael{color:#ffd76a;font-weight:700;letter-spacing:2px}.signature small{font-size:.7rem}
+@media(max-width:768px){header{flex-wrap:wrap;justify-content:center}.auth-actions{order:3}.hero{flex-direction:column;text-align:center;padding:65px 7%;gap:35px}.hero h1{font-size:2.5rem}.hero-card{width:100%;max-width:350px}.licence-grid,.about-cards{grid-template-columns:1fr}.formations-header h1,.about-hero h1{font-size:2.3rem}}
+
+/* Student dashboard */
+.student-page{min-height:78vh;padding:70px 7%;background:radial-gradient(circle at 15% 20%,rgba(0,217,255,.10),transparent 30%),radial-gradient(circle at 85% 70%,rgba(124,92,255,.15),transparent 35%)}
+.student-hero{max-width:850px;margin:0 auto 35px;text-align:center}.student-label{margin-bottom:12px;color:#00d9ff;font-size:.85rem;font-weight:700;letter-spacing:3px}.student-hero h1{margin-bottom:15px;font-size:3rem;line-height:1.15}.student-hero p{color:#aeb6d0}.student-name{color:#00d9ff}
+.student-summary{max-width:800px;margin:0 auto 28px;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.summary-item{display:flex;align-items:center;gap:14px;padding:18px 20px;background:rgba(20,24,48,.72);border:1px solid rgba(124,92,255,.25);border-radius:18px}.summary-item>span{font-size:1.7rem}.summary-item small{display:block;color:#aeb6d0}.summary-item strong{display:block;margin-top:2px}
+.student-cards{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.student-card{display:block;width:100%;padding:30px 22px;text-align:center;text-decoration:none;color:#fff;border-radius:22px;background:rgba(20,24,48,.78);border:1px solid rgba(124,92,255,.28);box-shadow:0 20px 45px rgba(0,0,0,.20);transition:.3s ease;cursor:pointer}.student-card:hover{transform:translateY(-6px);border-color:rgba(0,217,255,.55);box-shadow:0 20px 45px rgba(0,0,0,.25),0 0 25px rgba(0,217,255,.08)}.student-card-button{font:inherit}.student-icon{width:66px;height:66px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;border-radius:20px;background:rgba(0,217,255,.08);border:1px solid rgba(0,217,255,.22);font-size:1.9rem}.student-card h2{margin-bottom:10px;font-size:1.25rem}.student-card p{color:#aeb6d0;font-size:.92rem}.student-link{display:inline-block;margin-top:16px;color:#00d9ff;font-weight:700;font-size:.9rem}
+.profile-panel{display:none;max-width:700px;margin:40px auto 0;padding:35px;text-align:center;border-radius:22px;background:rgba(20,24,48,.85);border:1px solid rgba(0,217,255,.25);box-shadow:0 20px 45px rgba(0,0,0,.20)}.profile-panel.visible{display:block}.profile-photo{width:95px;height:95px;margin:0 auto 20px;border-radius:50%;object-fit:cover;border:2px solid rgba(0,217,255,.55);background:#141830}.profile-panel h2{margin-bottom:20px;color:#00d9ff}.profile-info{margin-bottom:25px}.profile-info p{margin:8px 0;color:#aeb6d0}.profile-info strong{color:#fff}.name-editor{margin-top:25px;padding-top:25px;border-top:1px solid rgba(124,92,255,.20)}.name-editor h3{margin-bottom:15px}.name-editor input{width:100%;padding:13px 16px;margin-bottom:12px;border:1px solid rgba(124,92,255,.35);border-radius:12px;background:rgba(8,11,24,.75);color:#fff;outline:none;font-size:1rem}.name-editor input:focus{border-color:#00d9ff}.profile-btn{display:inline-block;padding:11px 20px;border:none;border-radius:25px;background:linear-gradient(135deg,#7c5cff,#00d9ff);color:#fff;font-weight:700;cursor:pointer}.profile-btn:disabled{opacity:.65;cursor:not-allowed}.close-profile{margin-top:20px;background:transparent;border:1px solid rgba(255,255,255,.20)}.name-message{margin-top:12px;color:#00d9ff;font-size:.9rem}
+@media(max-width:1000px){.student-cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:768px){.student-page{padding:55px 7%}.student-hero h1{font-size:2.3rem}.student-summary,.student-cards{grid-template-columns:1fr}.profile-panel{padding:28px 20px}}
+
+/* Course system */
+.courses-hub,.level-page,.subject-page{min-height:78vh;padding:70px 7%;background:radial-gradient(circle at 12% 15%,rgba(0,217,255,.10),transparent 30%),radial-gradient(circle at 88% 75%,rgba(124,92,255,.16),transparent 35%)}
+.courses-hero,.level-hero,.subject-hero{max-width:820px;margin:0 auto 48px;text-align:center}.courses-hero h1,.level-hero h1,.subject-hero h1{font-size:3.2rem;margin-bottom:16px}.courses-hero h1 span,.level-hero h1 span{color:#00d9ff}.courses-hero p,.level-hero p,.subject-hero p{color:#aeb6d0}
+.course-levels{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.course-card{display:block;padding:32px 25px;text-align:center;color:#fff;text-decoration:none;background:rgba(20,24,48,.78);border:1px solid rgba(124,92,255,.28);border-radius:22px;transition:.3s ease;position:relative}.course-card:hover{transform:translateY(-6px);border-color:rgba(0,217,255,.6)}.course-card.recommended{border-color:#00d9ff;box-shadow:0 0 0 1px rgba(0,217,255,.18),0 20px 50px rgba(0,217,255,.08)}.course-card.recommended:before{content:"TON NIVEAU";position:absolute;top:14px;right:14px;font-size:.65rem;font-weight:700;letter-spacing:1px;color:#00d9ff}.course-icon{display:flex;width:70px;height:70px;margin:0 auto 18px;align-items:center;justify-content:center;border-radius:22px;background:rgba(0,217,255,.08);font-size:2rem}.course-card h2{margin-bottom:10px}.course-card p{color:#aeb6d0}.course-link{display:inline-block;margin-top:18px;color:#00d9ff;font-weight:700}
+.level-actions{margin-top:25px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}.level-actions a,.back-link{color:#00d9ff;text-decoration:none}.level-actions a:last-child{padding:9px 16px;border:1px solid rgba(0,217,255,.35);border-radius:20px}
+.subject-grid{max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.course-subject-card{display:flex;align-items:center;gap:16px;padding:22px;color:#fff;text-decoration:none;background:rgba(20,24,48,.78);border:1px solid rgba(124,92,255,.25);border-radius:18px;transition:.25s}.course-subject-card:hover{transform:translateY(-4px);border-color:rgba(0,217,255,.55)}.subject-number{display:flex;flex:0 0 42px;width:42px;height:42px;align-items:center;justify-content:center;border-radius:50%;background:linear-gradient(135deg,#7c5cff,#00d9ff);font-size:.8rem;font-weight:700}.course-subject-card h2{font-size:1.05rem;margin-bottom:5px}.course-subject-card p{color:#aeb6d0;font-size:.88rem}.subject-arrow{margin-left:auto;color:#00d9ff;font-size:1.3rem}
+.subject-page{max-width:none}.subject-hero{margin-top:35px}.learning-path{max-width:950px;margin:0 auto 35px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.learning-path>div,.content-empty{padding:28px;background:rgba(20,24,48,.78);border:1px solid rgba(124,92,255,.25);border-radius:20px}.learning-path span{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border-radius:50%;background:rgba(0,217,255,.1);color:#00d9ff;font-weight:700;margin-bottom:12px}.learning-path h2{margin-bottom:8px;font-size:1.1rem}.learning-path p{color:#aeb6d0;font-size:.9rem}.content-empty{max-width:720px;margin:0 auto;text-align:center}.content-empty h2{margin-bottom:12px}.content-empty p{color:#aeb6d0;margin-bottom:22px}
+@media(max-width:850px){.course-levels{grid-template-columns:1fr}.subject-grid{grid-template-columns:1fr}.learning-path{grid-template-columns:1fr}.courses-hero h1,.level-hero h1,.subject-hero h1{font-size:2.4rem}}
+
+/* Interactive course content */
+.course-content{max-width:900px;margin:0 auto}.course-note{margin:0 auto 18px;text-align:center;color:#ffd76a;font-size:.85rem}.course-intro{max-width:800px;margin:0 auto 24px;text-align:center;color:#c4cbe0}.chapter-nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:25px 0}.chapter-nav a{padding:9px 15px;border:1px solid rgba(0,217,255,.35);border-radius:20px;color:#00d9ff;text-decoration:none}.chapter-card{margin:22px 0;padding:28px;background:rgba(20,24,48,.82);border:1px solid rgba(124,92,255,.28);border-radius:20px}.chapter-card h2{margin-bottom:18px;color:#00d9ff}.chapter-card h3{margin:22px 0 8px}.chapter-card p,.chapter-card li{color:#c4cbe0}.objective-list{padding-left:22px;margin-bottom:18px}.chapter-summary{margin-top:22px;padding:16px;border-left:3px solid #00d9ff;background:rgba(0,217,255,.07);color:#fff}.exercise-item{padding:18px 0;border-top:1px solid rgba(124,92,255,.2)}.reveal-btn{margin-top:10px;padding:10px 17px;border:0;border-radius:22px;background:linear-gradient(135deg,#7c5cff,#00d9ff);color:white;font-weight:700;cursor:pointer}.answer-hidden{display:none;margin-top:12px;padding:13px;background:rgba(0,217,255,.07);border-radius:12px}.answer-hidden.visible{display:block}.quiz-question{margin:18px 0;padding:16px;border:1px solid rgba(124,92,255,.25);border-radius:14px}.quiz-question legend{padding:0 8px;font-weight:700}.quiz-question label{display:block;margin:10px 0;color:#c4cbe0}.quiz-question input{accent-color:#00d9ff;margin-right:7px}.quiz-result{margin-top:16px;color:#00d9ff;font-weight:700;line-height:1.7}
+
+
+/* Accessibility and mobile comfort for interactive course pages */
+.course-content a:focus-visible,
+.course-content button:focus-visible,
+.course-subject-card:focus-visible,
+.level-actions a:focus-visible,
+.back-link:focus-visible,
+.chapter-nav a:focus-visible {
+  outline: 3px solid #00d9ff;
+  outline-offset: 4px;
 }
-html {
-  scroll-behavior: smooth;
-}
-body {
-  font-family: Arial, sans-serif;
-  background: #080b18;
-  color: #ffffff;
-  line-height: 1.6;
-}
-/* ==============================
-   HEADER
-   ============================== */
-header {
+.quiz-question label {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 22px 7%;
-  background: rgba(8, 11, 24, 0.96);
-  border-bottom: 1px solid rgba(124, 92, 255, 0.25);
-  position: relative;
-  z-index: 10;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 44px;
+  padding: 9px 10px;
+  border-radius: 10px;
+  cursor: pointer;
 }
-.logo {
-  display: flex;
-  align-items: center;
+.quiz-question input {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
 }
-.logo img {
-  width: 65px;
-  height: 65px;
-  object-fit: contain;
-  display: block;
+.reveal-btn {
+  min-height: 44px;
 }
-nav {
-  display: flex;
-  gap: 28px;
-}
-nav a {
-  color: #dfe4f5;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: 0.3s ease;
-}
-nav a:hover,
-nav a.active {
-  color: #00d9ff;
-}
-/* ==============================
-   BOUTON CONNEXION
-   ============================== */
-.header-btn {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 10px 20px;
-  border: 1px solid rgba(0, 217, 255, 0.6);
-  border-radius: 30px;
-  background: rgba(0, 217, 255, 0.08);
-  font-weight: bold;
-  transition: 0.3s ease;
-}
-.header-btn:hover {
-  background: #00d9ff;
-  color: #080b18;
-  box-shadow: 0 0 20px rgba(0, 217, 255, 0.45);
-  transform: translateY(-2px);
-}
-/* ==============================
-   HERO
-   ============================== */
-.hero {
-  min-height: 78vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-  padding: 80px 7%;
-  background:
-    radial-gradient(
-      circle at 80% 25%,
-      rgba(124, 92, 255, 0.24),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at 15% 80%,
-      rgba(0, 217, 255, 0.12),
-      transparent 35%
-    );
-}
-.hero-content {
-  max-width: 680px;
-}
-.hero-tag {
-  display: inline-block;
-  margin-bottom: 18px;
-  color: #00d9ff;
-  font-size: 0.85rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-.hero h1 {
-  font-size: 3.6rem;
-  line-height: 1.1;
-  margin-bottom: 22px;
-}
-.hero h1 span {
-  color: #8c72ff;
-}
-.hero p {
-  max-width: 620px;
-  margin-bottom: 32px;
-  color: #aeb6d0;
-  font-size: 1.08rem;
-}
-/* ==============================
-   BOUTON NOS FORMATIONS
-   ============================== */
-.hero-btn {
-  display: inline-block;
-  padding: 14px 26px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #7c5cff, #00d9ff);
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 8px 25px rgba(124, 92, 255, 0.25);
-  transition: 0.3s ease;
-}
-.hero-btn:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 8px 30px rgba(124, 92, 255, 0.4),
-    0 0 20px rgba(0, 217, 255, 0.25);
-}
-/* ==============================
-   CARTE SEG UNDA
-   ============================== */
-.hero-card {
-  width: 330px;
-  padding: 38px 30px;
-  text-align: center;
-  border-radius: 22px;
-  background: rgba(20, 24, 48, 0.78);
-  border: 1px solid rgba(124, 92, 255, 0.35);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-}
-.hero-card h2 {
-  margin-bottom: 15px;
-  color: #00d9ff;
-  font-size: 1.7rem;
-}
-.hero-card p {
-  margin: 0;
-  color: #aeb6d0;
-  font-size: 0.95rem;
-}
-/* ==============================
-   SECTION PRÉSENTATION
-   ============================== */
-.presentation {
-  padding: 80px 7%;
-  text-align: center;
-}
-.presentation h2 {
-  margin-bottom: 15px;
-  font-size: 2.2rem;
-}
-.presentation h2 span {
-  color: #00d9ff;
-}
-.presentation > p {
-  max-width: 700px;
-  margin: auto;
-  color: #aeb6d0;
-}
-/* ==============================
-   PAGE À PROPOS
-   ============================== */
-.about-page {
-  min-height: 78vh;
-  padding: 70px 7%;
-  background:
-    radial-gradient(
-      circle at 15% 20%,
-      rgba(0, 217, 255, 0.10),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 85% 70%,
-      rgba(124, 92, 255, 0.15),
-      transparent 35%
-    );
-}
-/* INTRODUCTION */
-.about-hero {
-  max-width: 850px;
-  margin: 0 auto 55px;
-  text-align: center;
-}
-.about-label {
-  margin-bottom: 12px;
-  color: #00d9ff;
-  font-size: 0.85rem;
-  font-weight: bold;
-  letter-spacing: 3px;
-}
-.about-hero h1 {
-  margin-bottom: 20px;
-  font-size: 3rem;
-  line-height: 1.15;
-}
-.about-hero > p:last-child {
-  max-width: 700px;
-  margin: auto;
-  color: #aeb6d0;
-  font-size: 1.05rem;
-}
-/* CARTES */
-.about-cards {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.about-card {
-  padding: 32px 25px;
-  text-align: center;
-  border-radius: 22px;
-  background: rgba(20, 24, 48, 0.78);
-  border: 1px solid rgba(124, 92, 255, 0.28);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.20);
-  transition: 0.3s ease;
-}
-.about-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(0, 217, 255, 0.55);
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.25),
-    0 0 25px rgba(0, 217, 255, 0.08);
-}
-.about-icon {
-  width: 65px;
-  height: 65px;
-  margin: 0 auto 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 18px;
-  background: rgba(0, 217, 255, 0.08);
-  border: 1px solid rgba(0, 217, 255, 0.22);
-  font-size: 1.8rem;
-}
-.about-card h2 {
-  margin-bottom: 12px;
-  color: #ffffff;
-  font-size: 1.35rem;
-}
-.about-card p {
-  color: #aeb6d0;
-  font-size: 0.95rem;
-}
-/* INFORMATIONS SEG / UNDA */
-.about-info {
-  max-width: 850px;
-  margin: 55px auto 0;
-  padding: 35px;
-  text-align: center;
-  border-radius: 22px;
-  background: rgba(20, 24, 48, 0.60);
-  border: 1px solid rgba(0, 217, 255, 0.20);
-}
-.about-info h2 {
-  margin-bottom: 20px;
-  color: #00d9ff;
-  font-size: 1.8rem;
-}
-.about-info p {
-  margin-bottom: 10px;
-  color: #aeb6d0;
-}
-.about-info strong {
-  color: #ffffff;
-}
-.about-final {
-  margin-top: 22px;
-  color: #dfe4f5 !important;
-}
-/* ==============================
-   FOOTER
-   ============================== */
-footer {
-  margin-top: 40px;
-  padding: 32px 7%;
-  text-align: center;
-  background: #060812;
-  border-top: 1px solid rgba(124, 92, 255, 0.2);
-}
-footer > p {
-  color: #777f99;
-  font-size: 0.85rem;
-}
-/* ==============================
-   SIGNATURE MICHAEL
-   ============================== */
-.signature {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 12px;
-}
-.michael {
-  color: #ffd76a;
-  font-size: 1.15rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-shadow:
-    0 0 5px rgba(255, 215, 106, 0.7),
-    0 0 12px rgba(255, 190, 50, 0.5);
-  animation: michaelGlow 2.5s ease-in-out infinite alternate;
-}
-.signature small {
-  margin-top: 1px;
-  color: #777f99;
-  font-size: 0.68rem;
-  letter-spacing: 1px;
-}
-/* ==============================
-   ANIMATION MICHAEL
-   ============================== */
-@keyframes michaelGlow {
-  from {
-    text-shadow:
-      0 0 5px rgba(255, 215, 106, 0.6),
-      0 0 10px rgba(255, 190, 50, 0.35);
+@media(max-width:600px) {
+  .courses-hub,.level-page,.subject-page {
+    padding: 48px 5%;
   }
-  to {
-    text-shadow:
-      0 0 8px rgba(255, 215, 106, 0.9),
-      0 0 18px rgba(255, 190, 50, 0.6);
+  .chapter-card {
+    padding: 20px 16px;
   }
-}
-/* ==============================
-   VERSION MOBILE
-   ============================== */
-@media (max-width: 768px) {
-  header {
-    flex-wrap: wrap;
-    gap: 18px;
+  .course-subject-card {
+    padding: 18px 14px;
+    gap: 12px;
   }
-  .logo img {
-    width: 58px;
-    height: 58px;
-  }
-  nav {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 18px;
-  }
-  .hero {
-    min-height: auto;
-    flex-direction: column;
-    text-align: center;
-    padding: 65px 7%;
-  }
-  .hero-content {
-    max-width: 100%;
-  }
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-  .hero p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero-card {
-    width: 100%;
-    max-width: 350px;
-  }
-  .header-btn {
-    padding: 9px 17px;
-  }
-  /* À PROPOS SUR MOBILE */
-  .about-page {
-    padding: 55px 7%;
-  }
-  .about-hero h1 {
-    font-size: 2.3rem;
-  }
-  .about-cards {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .about-card {
-    padding: 28px 22px;
-  }
-  .about-info {
-    padding: 28px 20px;
+  .quiz-question {
+    padding: 13px 10px;
   }
 }
