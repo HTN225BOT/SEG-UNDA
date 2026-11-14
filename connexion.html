@@ -569,8 +569,7 @@
     import {
       getAuth,
       GoogleAuthProvider,
-      signInWithRedirect,
-      getRedirectResult,
+      signInWithPopup,
       signInWithEmailAndPassword,
       createUserWithEmailAndPassword,
       sendPasswordResetEmail,
@@ -818,32 +817,21 @@
        GOOGLE
        ============================== */
 
-    // Récupérer le résultat après le retour de Google.
-    // Le flux par redirection est plus adapté aux navigateurs mobiles.
-    try {
-      const redirectResult = await getRedirectResult(auth);
-
-      if (redirectResult && redirectResult.user) {
-        console.log(
-          "Google connecté :",
-          redirectResult.user.email
-        );
-        redirectToHome();
-      }
-    } catch (error) {
-      googleBtn.disabled = false;
-      showMessage(firebaseError(error));
-    }
-
-
+    // Connexion par fenêtre popup : option officielle Firebase
+    // pour les sites hébergés hors Firebase Hosting.
     googleBtn.addEventListener(
       "click",
       async () => {
         googleBtn.disabled = true;
-        showMessage("Redirection vers Google...");
+        showMessage("Ouverture de Google...");
 
         try {
-          await signInWithRedirect(auth, provider);
+          const result = await signInWithPopup(auth, provider);
+
+          if (result && result.user) {
+            console.log("Google connecté :", result.user.email);
+            redirectToHome();
+          }
         } catch (error) {
           googleBtn.disabled = false;
           showMessage(firebaseError(error));
