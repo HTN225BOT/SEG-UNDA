@@ -22,11 +22,11 @@
   };
   const style = document.createElement("style");
   style.textContent = `
-    .theme-control{position:relative;display:inline-flex;align-items:center;z-index:30;font-family:Arial,sans-serif;margin-left:8px}
-    .theme-toggle{display:inline-flex;align-items:center;gap:5px;padding:6px 9px;border:1px solid var(--theme-border,rgba(124,92,255,.3));border-radius:18px;background:transparent;color:var(--theme-muted,var(--theme-text,#fff));font-weight:600;font-size:.76rem;line-height:1;cursor:pointer;opacity:.82;transition:opacity .2s ease,border-color .2s ease,background .2s ease}
-    .theme-toggle:hover,.theme-toggle[aria-expanded="true"]{opacity:1;background:var(--theme-control-bg,rgba(0,217,255,.09));border-color:var(--theme-accent,#00d9ff)}
+    .theme-control{position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);right:10px;display:inline-flex;align-items:center;z-index:9999;font-family:Arial,sans-serif;margin:0}
+    .theme-toggle{display:grid;place-items:center;width:27px;height:27px;padding:0;border:1px solid var(--theme-border,rgba(124,92,255,.22));border-radius:50%;background:var(--theme-menu-bg,rgba(20,24,48,.72));color:var(--theme-muted,var(--theme-text,#fff));font-weight:600;font-size:12px;line-height:1;cursor:pointer;opacity:.58;transition:opacity .2s ease,border-color .2s ease,background .2s ease}
+    .theme-toggle:hover,.theme-toggle:focus-visible,.theme-toggle[aria-expanded="true"]{opacity:1;background:var(--theme-control-bg,rgba(0,217,255,.09));border-color:var(--theme-accent,#00d9ff)}
     .theme-toggle:focus-visible,.theme-option:focus-visible{outline:3px solid var(--theme-accent,#00d9ff);outline-offset:3px}
-    .theme-menu{position:absolute;top:calc(100% + 10px);right:0;display:none;min-width:190px;padding:8px;border:1px solid var(--theme-border,rgba(124,92,255,.3));border-radius:15px;background:var(--theme-menu-bg,#141830);box-shadow:0 14px 35px rgba(0,0,0,.28)}
+    .theme-menu{position:absolute;top:calc(100% + 7px);right:0;display:none;min-width:190px;padding:8px;border:1px solid var(--theme-border,rgba(124,92,255,.3));border-radius:15px;background:var(--theme-menu-bg,#141830);box-shadow:0 14px 35px rgba(0,0,0,.28)}
     .theme-menu.open{display:grid;gap:5px}
     .theme-option{display:flex;align-items:center;gap:10px;width:100%;padding:10px;border:0;border-radius:9px;background:transparent;color:var(--theme-text,#fff);text-align:left;font:inherit;cursor:pointer}
     .theme-option:hover,.theme-option[aria-pressed=true]{background:var(--theme-option-hover,rgba(0,217,255,.12))}
@@ -73,7 +73,7 @@
     body[data-theme="gold"] .login-icon,body[data-theme="dark"] .login-icon,body[data-theme="gold"] .login-btn,body[data-theme="dark"] .login-btn,body[data-theme="gold"] .header-btn,body[data-theme="dark"] .header-btn,body[data-theme="gold"] .google-btn,body[data-theme="dark"] .google-btn{background:linear-gradient(135deg,var(--theme-accent-2),var(--theme-accent));border-color:var(--theme-border);color:#fff}
     body[data-theme="gold"] .login-card>p,body[data-theme="dark"] .login-card>p,body[data-theme="gold"] .register,body[data-theme="dark"] .register,body[data-theme="gold"] .field label,body[data-theme="dark"] .field label,body[data-theme="gold"] .info,body[data-theme="dark"] .info,body[data-theme="gold"] .back-home,body[data-theme="dark"] .back-home{color:var(--theme-muted)}
     body[data-theme="gold"] .field input,body[data-theme="dark"] .field input{background:var(--theme-bg);color:var(--theme-text);border-color:var(--theme-border)}
-    @media(max-width:768px){.theme-control{margin:2px}.theme-toggle{padding:5px 8px;font-size:.72rem;gap:4px}.theme-menu{right:0}}
+    @media(max-width:768px){.theme-control{top:calc(env(safe-area-inset-top,0px) + 6px);right:7px}.theme-toggle{width:25px;height:25px;font-size:11px}.theme-menu{right:0}}
   `;
   document.head.appendChild(style);
   const mount = () => {
@@ -81,7 +81,7 @@
     if (!header || document.querySelector(".theme-control")) return;
     const control = document.createElement("div");
     control.className = "theme-control";
-    control.innerHTML = '<button class="theme-toggle" type="button" aria-haspopup="true" aria-expanded="false">🎨 Thème</button><div class="theme-menu" role="group" aria-label="Choisir une couleur"></div>';
+    control.innerHTML = '<button class="theme-toggle" type="button" aria-label="Choisir le thème" title="Choisir le thème" aria-haspopup="true" aria-expanded="false">🎨</button><div class="theme-menu" role="group" aria-label="Choisir une couleur"></div>';
     const menu = control.querySelector(".theme-menu");
     themes.forEach(theme => {
       const button = document.createElement("button");
