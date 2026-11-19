@@ -104,6 +104,21 @@ export const courseCatalog = {
           ["Lire un tableau de valeurs", "Un tableau de valeurs associe à plusieurs valeurs de x les valeurs correspondantes de f(x). Il permet de repérer des évolutions et de représenter graphiquement une fonction. Il faut toujours vérifier les unités et le contexte des variables."]
         ],
         summary: "Une fonction modélise une relation entre deux grandeurs. Les fonctions affines sont particulièrement utiles pour représenter des situations simples de coûts, recettes ou quantités, sous réserve des hypothèses du modèle."
+      },
+      {
+        title: "Systèmes linéaires et équilibre offre-demande",
+        objectives: [
+          "Représenter deux relations linéaires à l'aide d'un système.",
+          "Résoudre un système simple par substitution ou élimination.",
+          "Interpréter une solution dans un exemple simplifié d'offre et de demande."
+        ],
+        sections: [
+          ["Notion de système", "Un système de deux équations à deux inconnues cherche un couple de valeurs qui satisfait simultanément les deux égalités. Une solution doit donc vérifier chacune des équations, et pas seulement l'une d'entre elles."],
+          ["Méthode de substitution", "La méthode de substitution consiste à isoler une inconnue dans une équation, puis à remplacer cette inconnue par son expression dans l'autre équation. On résout alors une équation à une inconnue avant de retrouver la seconde valeur."],
+          ["Méthode d'élimination", "La méthode d'élimination consiste à additionner ou soustraire des équations, éventuellement après avoir multiplié l'une d'elles, afin de supprimer une inconnue. Il faut appliquer la même opération aux deux membres d'une équation."],
+          ["Application à l'équilibre offre-demande", "Dans un modèle simplifié, supposons que la quantité demandée soit Qd = 120 − 2P et la quantité offerte Qs = 30 + P. À l'équilibre, Qd = Qs : 120 − 2P = 30 + P, donc 90 = 3P et P = 30. Les deux quantités valent alors 60. Ce résultat dépend des fonctions linéaires choisies et ne décrit pas automatiquement un marché réel."]
+        ],
+        summary: "Un système permet de déterminer des valeurs qui satisfont plusieurs relations à la fois. Dans un modèle élémentaire de marché, l'égalité entre quantité offerte et quantité demandée peut servir à calculer un prix et une quantité d'équilibre."
       }
     ],
     exercises: [
@@ -111,14 +126,16 @@ export const courseCatalog = {
       {question:"Un article coûte 40 000 F CFA. Son prix augmente de 15 %. Quel est son nouveau prix ?",answer:"46 000 F CFA.",explanation:"La hausse vaut 0,15 × 40 000 = 6 000 F CFA. Le nouveau prix est 40 000 + 6 000 = 46 000 F CFA, soit 40 000 × 1,15."},
       {question:"Résolvez l'équation 4x − 7 = 21.",answer:"x = 7.",explanation:"On ajoute 7 aux deux membres : 4x = 28. On divise par 4 : x = 7. Vérification : 4 × 7 − 7 = 21."},
       {question:"Résolvez l'inéquation −3x ≤ 12.",answer:"x ≥ −4.",explanation:"On divise les deux membres par −3. Comme le diviseur est négatif, on inverse le sens du signe : x ≥ −4."},
-      {question:"Une entreprise a un coût total C(q) = 1 500q + 30 000, en F CFA. Calculez le coût pour 12 unités et expliquez le rôle de 30 000.",answer:"C(12) = 48 000 F CFA. Le montant 30 000 F CFA représente le coût fixe du modèle.",explanation:"C(12) = 1 500 × 12 + 30 000 = 18 000 + 30 000 = 48 000 F CFA. Le terme constant ne dépend pas de la quantité q : il représente ici le coût fixe supposé."}
+      {question:"Une entreprise a un coût total C(q) = 1 500q + 30 000, en F CFA. Calculez le coût pour 12 unités et expliquez le rôle de 30 000.",answer:"C(12) = 48 000 F CFA. Le montant 30 000 F CFA représente le coût fixe du modèle.",explanation:"C(12) = 1 500 × 12 + 30 000 = 18 000 + 30 000 = 48 000 F CFA. Le terme constant ne dépend pas de la quantité q : il représente ici le coût fixe supposé."},
+      {question:"La demande est Qd = 150 − 3P et l'offre Qs = 30 + 2P. Déterminez le prix et la quantité d'équilibre.",answer:"P = 24 et Q = 78 unités.",explanation:"À l'équilibre, Qd = Qs : 150 − 3P = 30 + 2P, donc 120 = 5P et P = 24. En remplaçant : Qd = 150 − 3 × 24 = 78 et Qs = 30 + 2 × 24 = 78. Les deux quantités sont égales."}
     ],
     quiz: [
       {q:"Combien vaut 20 % de 50 000 F CFA ?",options:["5 000 F CFA","10 000 F CFA","20 000 F CFA"],correct:1,why:"20 % = 0,20 et 0,20 × 50 000 = 10 000 F CFA."},
       {q:"Quelle est la forme développée de 4(x + 3) ?",options:["4x + 3","4x + 12","x + 12"],correct:1,why:"La distributivité donne 4 × x + 4 × 3 = 4x + 12."},
       {q:"Quelle est la solution de 2x + 6 = 14 ?",options:["x = 3","x = 4","x = 10"],correct:1,why:"On soustrait 6 : 2x = 8, puis on divise par 2 : x = 4."},
       {q:"Lorsqu'on divise les deux membres d'une inéquation par un nombre négatif :",options:["Le signe reste toujours identique","Le signe de l'inégalité s'inverse","L'inéquation n'a plus de solution"],correct:1,why:"La division par un nombre négatif inverse le sens de l'inégalité."},
-      {q:"Pour f(x) = 3x − 2, quelle est l'image de 5 ?",options:["13","15","17"],correct:0,why:"f(5) = 3 × 5 − 2 = 15 − 2 = 13."}
+      {q:"Pour f(x) = 3x − 2, quelle est l'image de 5 ?",options:["13","15","17"],correct:0,why:"f(5) = 3 × 5 − 2 = 15 − 2 = 13."},
+      {q:"Dans le système 2x + y = 11 et x − y = 1, quelle solution vérifie les deux équations ?",options:["x = 3, y = 5","x = 4, y = 3","x = 5, y = 1"],correct:1,why:"Avec x = 4 et y = 3, on obtient 2 × 4 + 3 = 11 et 4 − 3 = 1 : les deux égalités sont vérifiées."}
     ]
   }
   ,
