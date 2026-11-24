@@ -40,7 +40,7 @@ function isText(value) {
 }
 
 function normalizeText(value) {
-  return value.normalize("NFD")
+  return String(value ?? "").normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLocaleLowerCase("fr")
     .replace(/\s+/g, " ")
@@ -114,7 +114,7 @@ if (catalog) {
       fail(key + " : aucun chapitre structuré.");
     } else {
       stats.chapters += course.chapters.length;
-      checkUnique(course.chapters, chapter => chapter.title || "", key + " — titres des chapitres");
+      checkUnique(course.chapters, chapter => chapter && chapter.title || "", key + " — titres des chapitres");
 
       course.chapters.forEach((chapter, index) => {
         const label = key + " — chapitre " + (index + 1);
@@ -145,9 +145,13 @@ if (catalog) {
       fail(key + " : aucun exercice corrigé.");
     } else {
       stats.exercises += course.exercises.length;
-      checkUnique(course.exercises, exercise => exercise.question || "", key + " — questions d'exercices");
+      checkUnique(course.exercises, exercise => exercise && exercise.question || "", key + " — questions d'exercices");
       course.exercises.forEach((exercise, index) => {
         const label = key + " — exercice " + (index + 1);
+        if (!exercise || typeof exercise !== "object") {
+          fail(label + " : structure invalide.");
+          return;
+        }
         if (!isText(exercise.question)) fail(label + " : énoncé manquant.");
         if (!isText(exercise.answer)) fail(label + " : réponse corrigée manquante.");
         if (!isText(exercise.explanation)) fail(label + " : explication manquante.");
@@ -158,9 +162,13 @@ if (catalog) {
       fail(key + " : aucun quiz.");
     } else {
       stats.quizzes += course.quiz.length;
-      checkUnique(course.quiz, question => question.q || "", key + " — questions de quiz");
+      checkUnique(course.quiz, question => question && question.q || "", key + " — questions de quiz");
       course.quiz.forEach((question, index) => {
         const label = key + " — quiz " + (index + 1);
+        if (!question || typeof question !== "object") {
+          fail(label + " : structure invalide.");
+          return;
+        }
         if (!isText(question.q)) fail(label + " : question manquante.");
         if (!Array.isArray(question.options) || question.options.length < 2 ||
             !question.options.every(isText)) {
