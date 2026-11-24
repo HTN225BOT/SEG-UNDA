@@ -231,21 +231,33 @@ for (const page of expectedLevels) {
 
   for (const href of hrefs) {
     stats.links += 1;
-    let url;
-    try {
-      url = new URL(href, "https://seg-unda.invalid/");
-    } catch {
-      fail(page.file + " : URL de matière invalide : " + href);
-      continue;
-    }
-
-    if (url.pathname !== "/cours/matiere.html") {
+    const queryIndex = href.indexOf("?");
+    const pathname = (queryIndex === -1 ? href : href.slice(0, queryIndex)).replace(/^\.\//, "");
+    if (pathname !== "cours/matiere.html") {
       fail(page.file + " : destination inattendue : " + href);
       continue;
     }
 
-    const levels = url.searchParams.getAll("level");
-    const subjects = url.searchParams.getAll("subject");
+    const params = new Map();
+    const query = queryIndex === -1 ? "" : href.slice(queryIndex + 1);
+    try {
+      for (const part of query.split("&").filter(Boolean)) {
+        const separator = part.indexOf("=");
+        const rawName = separator === -1 ? part : part.slice(0, separator);
+        const rawValue = separator === -1 ? "" : part.slice(separator + 1);
+        const name = decodeURIComponent(rawName.replace(/\+/g, " "));
+        const value = decodeURIComponent(rawValue.replace(/\+/g, " "));
+        const values = params.get(name) || [];
+        values.push(value);
+        params.set(name, values);
+      }
+    } catch (error) {
+      fail(page.file + " : paramètres URL mal encodés : " + href);
+      continue;
+    }
+
+    const levels = params.get("level") || [];
+    const subjects = params.get("subject") || [];
     if (levels.length !== 1 || subjects.length !== 1) {
       fail(page.file + " : chaque lien doit transmettre exactement un paramètre level et subject.");
       continue;
