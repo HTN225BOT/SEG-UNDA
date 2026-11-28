@@ -214,6 +214,24 @@ export const courseCatalog = {
           ["Application à l'équilibre offre-demande", "Dans un modèle simplifié, supposons que la quantité demandée soit Qd = 120 − 2P et la quantité offerte Qs = 30 + P. À l'équilibre, Qd = Qs : 120 − 2P = 30 + P, donc 90 = 3P et P = 30. Les deux quantités valent alors 60. Ce résultat dépend des fonctions linéaires choisies et ne décrit pas automatiquement un marché réel."]
         ],
         summary: "Un système permet de déterminer des valeurs qui satisfont plusieurs relations à la fois. Dans un modèle élémentaire de marché, l'égalité entre quantité offerte et quantité demandée peut servir à calculer un prix et une quantité d'équilibre."
+      },
+      {
+        title: "Coûts, recettes et seuil de rentabilité",
+        objectives: [
+          "Distinguer les coûts fixes et les coûts variables dans un modèle simplifié.",
+          "Construire les fonctions de coût total, de recette et de résultat.",
+          "Calculer le seuil de rentabilité en volume et en chiffre d'affaires.",
+          "Interpréter la marge de sécurité et le point mort sous une hypothèse de ventes régulières.",
+          "Identifier les hypothèses et les limites d'un modèle de seuil de rentabilité."
+        ],
+        sections: [
+          ["Coûts fixes et coûts variables", "Dans un modèle élémentaire, les coûts fixes (CF) ne varient pas avec le volume d'activité à l'intérieur d'une période et d'une capacité données. Les coûts variables évoluent avec la quantité produite. Si le coût variable unitaire (CVu) est supposé constant et si q désigne le nombre d'unités, le coût total s'écrit C(q) = CF + CVu × q. Cette représentation est une simplification : certains coûts peuvent être mixtes ou évoluer par paliers."],
+          ["Recette et résultat", "Si chaque unité est vendue au même prix p, la recette totale est R(q) = p × q. Le résultat simplifié est le chiffre d'affaires moins le coût total : B(q) = R(q) − C(q) = (p − CVu) × q − CF. La différence p − CVu est la marge sur coût variable unitaire. Elle contribue d'abord à couvrir les coûts fixes ; au-delà, elle contribue au résultat positif."],
+          ["Calcul du seuil de rentabilité", "Le seuil de rentabilité est le niveau d'activité pour lequel le résultat est nul : R(q) = C(q). Lorsque p est supérieur à CVu, le volume théorique correspondant est q* = CF / (p − CVu). Si l'activité se mesure en unités entières, il faut atteindre au moins l'entier supérieur lorsque le quotient n'est pas entier. Le chiffre d'affaires au seuil est R(q*) = p × q*. Si p est inférieur ou égal à CVu, le modèle ne permet pas de couvrir les coûts fixes par une hausse du volume."],
+          ["Marge de sécurité et point mort", "La marge de sécurité en volume correspond à l'activité prévue ou réalisée diminuée du seuil de rentabilité. Son taux peut être calculé en divisant cette marge par l'activité prévue ou réalisée, si celle-ci est positive. Le point mort exprime une date ou une durée d'atteinte du seuil. Lorsque les ventes sont supposées régulières sur l'année, on peut l'estimer par (chiffre d'affaires au seuil / chiffre d'affaires annuel prévu) × nombre de jours retenu. Si les ventes sont saisonnières, il faut utiliser leur calendrier réel plutôt qu'une répartition uniforme."],
+          ["Hypothèses et limites du modèle", "Le calcul suppose notamment un prix de vente unitaire, un coût variable unitaire et des coûts fixes stables dans la plage étudiée. Il simplifie aussi la diversité des produits, les variations de stocks, les impôts, les frais financiers et les changements de capacité. Le seuil calculé est donc un outil d'analyse, pas une prévision certaine. Les hypothèses doivent être explicitées avant de prendre une décision de gestion."]
+        ],
+        summary: "Le seuil de rentabilité relie les coûts, le prix de vente et le volume d'activité. Il permet d'estimer le niveau de ventes nécessaire pour couvrir les coûts, à condition de respecter les hypothèses du modèle."
       }
     ],
     exercises: [
@@ -222,7 +240,22 @@ export const courseCatalog = {
       {question:"Résolvez l'équation 4x − 7 = 21.",answer:"x = 7.",explanation:"On ajoute 7 aux deux membres : 4x = 28. On divise par 4 : x = 7. Vérification : 4 × 7 − 7 = 21."},
       {question:"Résolvez l'inéquation −3x ≤ 12.",answer:"x ≥ −4.",explanation:"On divise les deux membres par −3. Comme le diviseur est négatif, on inverse le sens du signe : x ≥ −4."},
       {question:"Une entreprise a un coût total C(q) = 1 500q + 30 000, en F CFA. Calculez le coût pour 12 unités et expliquez le rôle de 30 000.",answer:"C(12) = 48 000 F CFA. Le montant 30 000 F CFA représente le coût fixe du modèle.",explanation:"C(12) = 1 500 × 12 + 30 000 = 18 000 + 30 000 = 48 000 F CFA. Le terme constant ne dépend pas de la quantité q : il représente ici le coût fixe supposé."},
-      {question:"La demande est Qd = 150 − 3P et l'offre Qs = 30 + 2P. Déterminez le prix et la quantité d'équilibre.",answer:"P = 24 et Q = 78 unités.",explanation:"À l'équilibre, Qd = Qs : 150 − 3P = 30 + 2P, donc 120 = 5P et P = 24. En remplaçant : Qd = 150 − 3 × 24 = 78 et Qs = 30 + 2 × 24 = 78. Les deux quantités sont égales."}
+      {question:"La demande est Qd = 150 − 3P et l'offre Qs = 30 + 2P. Déterminez le prix et la quantité d'équilibre.",answer:"P = 24 et Q = 78 unités.",explanation:"À l'équilibre, Qd = Qs : 150 − 3P = 30 + 2P, donc 120 = 5P et P = 24. En remplaçant : Qd = 150 − 3 × 24 = 78 et Qs = 30 + 2 × 24 = 78. Les deux quantités sont égales."},
+      {
+        question: "Une petite unité de production supporte 90 000 F CFA de coûts fixes. Son coût variable est de 1 800 F CFA par unité et son prix de vente est de 3 000 F CFA. Calculez le coût total, la recette et le résultat pour 50 unités, puis déterminez le seuil de rentabilité.",
+        answer: "Pour 50 unités : coût total = 180 000 F CFA, recette = 150 000 F CFA et résultat = −30 000 F CFA. Le seuil est de 75 unités, soit 225 000 F CFA de chiffre d'affaires.",
+        explanation: "C(50) = 90 000 + 1 800 × 50 = 180 000. R(50) = 3 000 × 50 = 150 000. Le résultat vaut 150 000 − 180 000 = −30 000. La marge sur coût variable unitaire est 3 000 − 1 800 = 1 200. Le seuil est 90 000 / 1 200 = 75 unités. À ce volume, coût et recette valent chacun 225 000 F CFA."
+      },
+      {
+        question: "Une entreprise a 240 000 F CFA de coûts fixes, un coût variable unitaire de 2 500 F CFA et vend chaque unité 4 000 F CFA. Déterminez le seuil de rentabilité, puis le résultat pour 200 unités.",
+        answer: "Le seuil est de 160 unités, soit 640 000 F CFA de chiffre d'affaires. Pour 200 unités, le résultat est un bénéfice de 60 000 F CFA.",
+        explanation: "La marge sur coût variable unitaire vaut 4 000 − 2 500 = 1 500 F CFA. Le seuil est 240 000 / 1 500 = 160 unités. Pour 200 unités, le résultat est (1 500 × 200) − 240 000 = 60 000 F CFA."
+      },
+      {
+        question: "Une entreprise prévoit de vendre 300 unités sur une année de 360 jours. Son seuil de rentabilité est de 150 unités. En supposant des ventes régulières, estimez le point mort et la marge de sécurité en volume si elle vend finalement 210 unités.",
+        answer: "Le point mort estimé est de 180 jours. La marge de sécurité est de 60 unités.",
+        explanation: "Avec des ventes régulières, le point mort est (150 / 300) × 360 = 180 jours. Pour 210 unités vendues, la marge de sécurité est 210 − 150 = 60 unités. Son taux est 60 / 210 × 100, soit environ 28,57 %. Le calcul du point mort dépend de l'hypothèse de régularité des ventes."
+      }
     ],
     quiz: [
       {q:"Combien vaut 20 % de 50 000 F CFA ?",options:["5 000 F CFA","10 000 F CFA","20 000 F CFA"],correct:1,why:"20 % = 0,20 et 0,20 × 50 000 = 10 000 F CFA."},
@@ -230,7 +263,25 @@ export const courseCatalog = {
       {q:"Quelle est la solution de 2x + 6 = 14 ?",options:["x = 3","x = 4","x = 10"],correct:1,why:"On soustrait 6 : 2x = 8, puis on divise par 2 : x = 4."},
       {q:"Lorsqu'on divise les deux membres d'une inéquation par un nombre négatif :",options:["Le signe reste toujours identique","Le signe de l'inégalité s'inverse","L'inéquation n'a plus de solution"],correct:1,why:"La division par un nombre négatif inverse le sens de l'inégalité."},
       {q:"Pour f(x) = 3x − 2, quelle est l'image de 5 ?",options:["13","15","17"],correct:0,why:"f(5) = 3 × 5 − 2 = 15 − 2 = 13."},
-      {q:"Dans le système 2x + y = 11 et x − y = 1, quelle solution vérifie les deux équations ?",options:["x = 3, y = 5","x = 4, y = 3","x = 5, y = 1"],correct:1,why:"Avec x = 4 et y = 3, on obtient 2 × 4 + 3 = 11 et 4 − 3 = 1 : les deux égalités sont vérifiées."}
+      {q:"Dans le système 2x + y = 11 et x − y = 1, quelle solution vérifie les deux équations ?",options:["x = 3, y = 5","x = 4, y = 3","x = 5, y = 1"],correct:1,why:"Avec x = 4 et y = 3, on obtient 2 × 4 + 3 = 11 et 4 − 3 = 1 : les deux égalités sont vérifiées."},
+      {
+        q: "Dans le modèle C(q) = CF + CVu × q, que représente CVu ?",
+        options: ["Le coût fixe total", "Le coût variable pour une unité", "Le chiffre d'affaires total"],
+        correct: 1,
+        why: "CVu désigne le coût variable unitaire ; multiplié par la quantité q, il donne le total des coûts variables dans ce modèle."
+      },
+      {
+        q: "Une entreprise a 120 000 F CFA de coûts fixes et une marge sur coût variable de 1 500 F CFA par unité. Quel est son seuil de rentabilité en volume ?",
+        options: ["60 unités", "80 unités", "100 unités"],
+        correct: 1,
+        why: "Le seuil vaut CF / marge sur coût variable unitaire, soit 120 000 / 1 500 = 80 unités."
+      },
+      {
+        q: "Le calcul simplifié du point mort à partir du chiffre d'affaires annuel suppose notamment que :",
+        options: ["Les ventes sont réparties régulièrement sur la période", "Les coûts fixes sont toujours nuls", "Le prix de vente change chaque jour"],
+        correct: 0,
+        why: "La formule proportionnelle en jours suppose une activité régulière. En cas de saisonnalité, il faut tenir compte du calendrier réel des ventes."
+      }
     ]
   }
   ,
